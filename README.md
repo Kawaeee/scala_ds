@@ -6,7 +6,7 @@
 ├── exercises/                          # Courseworks and example
 │       └── C1-HelloWorld/
 │       └── C2-bisection/
-├── pages/                              # HTML Archived content
+├── docs/                              # HTML Archived content
 │       └── index.html
 │       └── scala-tools.html
 ├── scala_tutorial.pdf                  # Course lecture pdf file
