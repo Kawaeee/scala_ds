@@ -1,147 +1,139 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <!-- saved from url=(0054)http://10.4.11.97/~miyazawa/class/wiki/scala-course.18 -->
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" class="gr__10_4_11_97"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
- 
- <meta http-equiv="content-style-type" content="text/css">
-
- <title>scala-course.18 - Miyazawa's Lecture Notes</title>
-
- <link rel="SHORTCUT ICON" href="http://10.4.11.97/~miyazawa/class/wiki/scala-course.18">
- <link rel="stylesheet" type="text/css" media="screen" href="./scala-course.18 - Miyazawa&#39;s Lecture Notes_files/pukiwiki.css.php" charset="iso-8859-1">
- <link rel="stylesheet" type="text/css" media="print" href="./scala-course.18 - Miyazawa&#39;s Lecture Notes_files/pukiwiki.css(1).php" charset="iso-8859-1">
- <link rel="alternate" type="application/rss+xml" title="RSS" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=rss">
-
-</head>
-<body data-gr-c-s-loaded="true">
-
-<div id="header">
- <!--
- <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?FrontPage"><img id="logo" src="image/pukiwiki.png" width="80" height="80" alt="[PukiWiki]" title="[PukiWiki]" /></a>
-
- <h1 class="title"><a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?plugin=related&amp;page=scala-course.18">scala-course.18</a> </h1>
- -->
-
-    <span class="small">
-   <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?FrontPage" title="FrontPage (138d)">Top</a> / scala-course.18   </span>
- 
-</div>
-
-<div id="navigator">
-
- <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?plugin=related&amp;page=scala-course.18">scala-course.18</a>  &nbsp;
- [ <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?FrontPage">Front page</a> ] &nbsp;
-
- [
-  <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=diff&amp;page=scala-course.18">Diff</a> 	| <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=backup&amp;page=scala-course.18">Backup</a>   | <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-course.18">Reload</a> ] &nbsp;
-
- [
-    <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=list">List of pages</a>  | <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=search">Search</a> | <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?RecentChanges">Recent changes</a> | <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?Help">Help</a> ]
-
-</div>
-
-<hr class="full_hr">
-<div id="body"><p><a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?Scala_for_data_science" title="Scala_for_data_science (106d)">Scala_for_data_science</a></p>
-<h2 id="content_1_0">Scala language: A functional approach to data science  <a class="anchor_super" id="kc425d2e" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-course.18#kc425d2e" title="kc425d2e">†</a></h2>
-
-<div class="jumpmenu"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-course.18#navigator">↑</a></div><h3 id="content_1_1"><a href="http://10.4.11.97/~miyazawa/class/scala-course.18/cscXXX-TQF-03-Scala.pdf" title="MiyazawaClass:scala-course.18/cscXXX-TQF-03-Scala.pdf" rel="nofollow">Syllabus</a> | <a href="http://10.4.11.97/~miyazawa/class/scala-course.18/sclass-schedule.txt" title="MiyazawaClass:scala-course.18/sclass-schedule.txt" rel="nofollow">Class Schedule</a>  <a class="anchor_super" id="l20e8c75" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-course.18#l20e8c75" title="l20e8c75">†</a></h3>
-
-<div class="jumpmenu"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-course.18#navigator">↑</a></div><h3 id="content_1_2"><a href="http://10.4.11.97/~miyazawa/class/wiki/index_editable.php?scala-course-wiki.18" title="MiyazawaClassWikiEditable:scala-course-wiki.18" rel="nofollow">Class Wiki</a>  <a class="anchor_super" id="t9857e5d" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-course.18#t9857e5d" title="t9857e5d">†</a></h3>
-
-<div class="jumpmenu"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-course.18#navigator">↑</a></div><h3 id="content_1_3">Lecture Note  <a class="anchor_super" id="ea6085de" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-course.18#ea6085de" title="ea6085de">†</a></h3>
-<ul class="list1" style="padding-left:16px;margin-left:16px"><li><a href="http://10.4.11.97/~miyazawa/class/scala-course.18/scala_tutorial.pdf" title="MiyazawaClass:scala-course.18/scala_tutorial.pdf" rel="nofollow">Lecture Note </a>
-that includes REPL outputs as comments and is appropriate for self-study.</li></ul>
-<ul class="list1" style="padding-left:16px;margin-left:16px"><li><a href="http://10.4.11.97/~miyazawa/class/scala-course.18/scala_tutorial.withoutComments.pdf" title="MiyazawaClass:scala-course.18/scala_tutorial.withoutComments.pdf" rel="nofollow">Lecture Note </a> that does not include REPL outputs and is appropriate for cut-and-paste of Scala codes.</li></ul>
-
-<div class="jumpmenu"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-course.18#navigator">↑</a></div><h3 id="content_1_4">Useful links:  <a class="anchor_super" id="r5334f3b" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-course.18#r5334f3b" title="r5334f3b">†</a></h3>
-<ul class="list2" style="padding-left:32px;margin-left:32px"><li><a href="https://www.scala-lang.org/" rel="nofollow"> Official site of Scala </a></li>
-<li><a href="https://docs.scala-lang.org/" rel="nofollow"> Scala Documentation </a>
-| <a href="https://docs.scala-lang.org/tour/tour-of-scala.html" rel="nofollow">Tour of Scala </a>
-| <a href="https://docs.scala-lang.org/cheatsheets/index.html" rel="nofollow">Scala cheatsheet </a>
-| <a href="https://docs.scala-lang.org/overviews/collections/introduction.html" rel="nofollow">Collection </a>
-| <a href="https://superruzafa.github.io/visual-scala-reference/" rel="nofollow">Visual Scala reference </a>
-| <a href="https://docs.scala-lang.org/api/all.html" rel="nofollow">Scala API </a>
-|<a href="https://docs.oracle.com/javase/8/docs/api/" rel="nofollow"> Java 8 API </a></li>
-<li><a href="https://www.scala-exercises.org/scala_tutorial/" rel="nofollow">Scala exercises: Scala tutorial </a>
-| <a href="https://www.tutorialspoint.com/scala/index.htm" rel="nofollow">Scala Tutorial </a>
-| <a href="https://www.coursera.org/learn/scala-spark-big-data" rel="nofollow">Online Learning at Coursera </a></li></ul>
-<ul class="list2" style="padding-left:32px;margin-left:32px"><li><a href="https://www.scala-sbt.org/documentation.html" rel="nofollow">Sbt documentation </a></li></ul>
-<ul class="list2" style="padding-left:32px;margin-left:32px"><li><a href="https://github.com/scalanlp/breeze/wiki/" rel="nofollow">Breeze brief document </a>
-| <a href="https://github.com/scalanlp/breeze/wiki/Linear-Algebra-Cheat-Sheet" rel="nofollow">Linear Algebra Cheat Sheet </a>
-| <a href="http://10.4.11.97/doc/local_scaladoc_2.11/breeze_2.11-0.13.1/index.html#package" title="SIT:doc/local_scaladoc_2.11/breeze_2.11-0.13.1/index.html" rel="nofollow">Breeze API </a></li></ul>
-<ul class="list2" style="padding-left:32px;margin-left:32px"><li><a href="http://10.4.11.97/doc/local_scaladoc_2.11/scala-glm" title="SIT:doc/local_scaladoc_2.11/scala-glm" rel="nofollow"> API of scala-glm </a></li>
-<li><a href="https://github.com/dbdahl/rscala" rel="nofollow">Integration of R and Scala Using rscala </a>
-| <a href="https://dahl.byu.edu/software/rscala/scaladoc/org/ddahl/rscala/RClient$.html" rel="nofollow">API </a></li></ul>
-<ul class="list2" style="padding-left:32px;margin-left:32px"><li><a href="https://spark.apache.org/documentation.html" rel="nofollow">Spark documentations </a></li></ul>
-<ul class="list2" style="padding-left:32px;margin-left:32px"><li><a href="https://github.com/eaplatanios/tensorflow_scala" rel="nofollow">Tensorflow API for the Scala Language </a></li></ul>
-
-<div class="jumpmenu"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-course.18#navigator">↑</a></div><h3 id="content_1_5">Exercises for Scala language: A functional approach to data science <a class="anchor_super" id="f427cead" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-course.18#f427cead" title="f427cead">†</a></h3>
-<ol class="list1" style="padding-left:16px;margin-left:16px"><li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-introduction" title="MiyazawaClassWiki:scala-introduction" rel="nofollow">Introduction</a>
-<ul class="list2" style="padding-left:16px;margin-left:16px"><li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-introduction#jb1c0d6e" title="MiyazawaClassWiki:scala-introduction" rel="nofollow">SBT and editor setup</a></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-introduction#j2e112fa" title="MiyazawaClassWiki:scala-introduction" rel="nofollow">Create your own Scala SBT project. </a></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-introduction#ef763e75" title="MiyazawaClassWiki:scala-introduction" rel="nofollow">Scala basics tour </a></li></ul></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-FP-basics" title="MiyazawaClassWiki:scala-FP-basics" rel="nofollow">Scala and FP Basics </a>
-<ul class="list2" style="padding-left:16px;margin-left:16px"><li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-FP-basics#w2c3e64a" title="MiyazawaClassWiki:scala-FP-basics" rel="nofollow">LogFactorial example </a></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-FP-basics#kefa79c5" title="MiyazawaClassWiki:scala-FP-basics" rel="nofollow">Interval bisection </a></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-FP-basics#me7215d7" title="MiyazawaClassWiki:scala-FP-basics" rel="nofollow">Scala exercises </a></li></ul></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-collections" title="MiyazawaClassWiki:scala-collections" rel="nofollow">Collections </a>
-<ul class="list2" style="padding-left:16px;margin-left:16px"><li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-collections#x2af6179" title="MiyazawaClassWiki:scala-collections" rel="nofollow">Review official documentation </a></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-collections#fd75a711" title="MiyazawaClassWiki:scala-collections" rel="nofollow">Computing the sample mean and standard deviation </a></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-collections#k7328ceb" title="MiyazawaClassWiki:scala-collections" rel="nofollow">Wrap interval bisection code in an Option </a></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-collections#nd52d659" title="MiyazawaClassWiki:scala-collections" rel="nofollow">Write methods generating a fibonacci series </a></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-collections#y5c33c92" title="MiyazawaClassWiki:scala-collections" rel="nofollow">Exercises for collections</a></li></ul></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-breeze" title="MiyazawaClassWiki:scala-breeze" rel="nofollow">Scala scientific and statistical computing </a>
-<ul class="list2" style="padding-left:16px;margin-left:16px"><li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-breeze#k2849014" title="MiyazawaClassWiki:scala-breeze" rel="nofollow">Spire cfor macro </a></li>
-<li>Breeze: <a href="http://10.4.11.97/~miyazawa/class/wiki/scala-breeze#m50173a6" title="MiyazawaClassWiki:scala-breeze" rel="nofollow">Useful links: </a></li>
-<li>Breeze: <a href="http://10.4.11.97/~miyazawa/class/wiki/scala-breeze#re67a30b" title="MiyazawaClassWiki:scala-breeze" rel="nofollow">Review the on-line documentation </a></li>
-<li>BreezeL <a href="http://10.4.11.97/~miyazawa/class/wiki/scala-breeze#e3adea2e" title="MiyazawaClassWiki:scala-breeze" rel="nofollow">Multivariate normal </a></li></ul></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-mc" title="MiyazawaClassWiki:scala-mc" rel="nofollow">Monte Carlo methods </a>
-<ul class="list2" style="padding-left:16px;margin-left:16px"><li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-mc#c9b04c82" title="MiyazawaClassWiki:scala-mc" rel="nofollow">Simple Monte Carlo </a></li>
-<li>(optional) <a href="http://10.4.11.97/~miyazawa/class/wiki/scala-mc#qd58eb81" title="MiyazawaClassWiki:scala-mc" rel="nofollow">Bayesian inference for a normal random sample </a></li></ul></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-stat-model" title="MiyazawaClassWiki:scala-stat-model" rel="nofollow"> Statistical modelling </a>
-<ul class="list2" style="padding-left:16px;margin-left:16px"><li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-stat-model#adbaf91e" title="MiyazawaClassWiki:scala-stat-model" rel="nofollow">Linear regression modelling </a></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-stat-model#a95d8a71" title="MiyazawaClassWiki:scala-stat-model" rel="nofollow">IRLS code optimisation </a></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-stat-model#l2bee45c" title="MiyazawaClassWiki:scala-stat-model" rel="nofollow">Scala-Glm library </a></li></ul></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-tools" title="MiyazawaClassWiki:scala-tools" rel="nofollow">Tools/Libraries </a>
-<ul class="list2" style="padding-left:16px;margin-left:16px"><li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-tools#n2795b4a" title="MiyazawaClassWiki:scala-tools" rel="nofollow">ScalaDoc </a></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-tools#e4863dae" title="MiyazawaClassWiki:scala-tools" rel="nofollow">(optional) Testing </a></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-tools#oac6048c" title="MiyazawaClassWiki:scala-tools" rel="nofollow">Interfacing with R </a></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-tools#o7761d25" title="MiyazawaClassWiki:scala-tools" rel="nofollow">Vegas: a visualisation library </a></li></ul></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-spark" title="MiyazawaClassWiki:scala-spark" rel="nofollow">Apache Spark </a>
-<ul class="list2" style="padding-left:16px;margin-left:16px"><li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-spark#zb29d352" title="MiyazawaClassWiki:scala-spark" rel="nofollow">Review some Spark documentation </a></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-spark#i8ad8cc7" title="MiyazawaClassWiki:scala-spark" rel="nofollow">Logistic regression for the SpamBase dataset </a></li></ul></li></ol>
-</div>
-
-
-
-<hr class="full_hr">
-<!-- Toolbar -->
-<div id="toolbar">
-
- <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?FrontPage"><img src="./scala-course.18 - Miyazawa&#39;s Lecture Notes_files/top.png" width="20" height="20" alt="Front page" title="Front page"></a>
- &nbsp;
-  <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=diff&amp;page=scala-course.18"><img src="./scala-course.18 - Miyazawa&#39;s Lecture Notes_files/diff.png" width="20" height="20" alt="Diff" title="Diff"></a>	<a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=backup&amp;page=scala-course.18"><img src="./scala-course.18 - Miyazawa&#39;s Lecture Notes_files/backup.png" width="20" height="20" alt="Backup" title="Backup"></a> <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-course.18"><img src="./scala-course.18 - Miyazawa&#39;s Lecture Notes_files/reload.png" width="20" height="20" alt="Reload" title="Reload"></a> &nbsp;
- <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=list"><img src="./scala-course.18 - Miyazawa&#39;s Lecture Notes_files/list.png" width="20" height="20" alt="List of pages" title="List of pages"></a> <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=search"><img src="./scala-course.18 - Miyazawa&#39;s Lecture Notes_files/search.png" width="20" height="20" alt="Search" title="Search"></a> <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?RecentChanges"><img src="./scala-course.18 - Miyazawa&#39;s Lecture Notes_files/recentchanges.png" width="20" height="20" alt="Recent changes" title="Recent changes"></a> &nbsp; <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?Help"><img src="./scala-course.18 - Miyazawa&#39;s Lecture Notes_files/help.png" width="20" height="20" alt="Help" title="Help"></a> &nbsp; <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=rss&amp;ver=1.0"><img src="./scala-course.18 - Miyazawa&#39;s Lecture Notes_files/rss.png" width="36" height="14" alt="RSS of recent changes" title="RSS of recent changes"></a></div>
-
-<div id="lastmodified"> <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?plugin=related&amp;page=scala-course.18">scala-course.18</a> ; &nbsp; Last-modified: 2018-11-30 (Fri) 17:34:01  (1d)</div>
-
-<div id="related">Link: <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-spark">scala-spark</a>(1d)
- <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-tools">scala-tools</a>(23d)
- <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-stat-model">scala-stat-model</a>(33d)
- <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-mc">scala-mc</a>(43d)
- <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-collections">scala-collections</a>(64d)
- <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-breeze">scala-breeze</a>(75d)
- <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-introduction">scala-introduction</a>(94d)
- <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?Scala_for_data_science">Scala_for_data_science</a>(106d)
- <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-FP-basics">scala-FP-basics</a>(197d)</div>
-
-<div id="footer">
- Site admin: <a href="mailto:miyazawa@sanzo.org">MIYAZAWA, Sanzo</a>
-<p>
-
- <strong>PukiWiki 1.4.7</strong> Copyright © 2001-2006 <a href="http://pukiwiki.sourceforge.jp/">PukiWiki Developers Team</a>. License is <a href="http://www.gnu.org/licenses/gpl.html">GPL</a>.<br> Based on "PukiWiki" 1.3 by <a href="http://factage.com/yu-ji/">yu-ji</a>.
- Powered by PHP 5.6.24-0+deb8u1. HTML conversion time: 0.010 sec.
-</p></div>
-
-
-
-</body></html>
+<!-- cleansed unused code block and adjusted some layout formatting by Kawaeee -->
+<!-- For everyone, who want to get original version of the page, please check first commit! -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" class="gr__10_4_11_97">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="content-style-type" content="text/css">
+        <title>scala-course.18 - Miyazawa's Lecture Notes</title>
+    </head>
+    <body data-gr-c-s-loaded="true">
+        <hr class="full_hr">
+        <div id="body">
+            <p>
+            <h2 id="content_1_0">Scala language: A functional approach to data science (<a href="index.html" title="scala-course.18 (1d)">scala-course.18</a>)</p></h2>
+            <h3 id="content_1_1">
+                <a href="#error" title="MiyazawaClass:scala-course.18/cscXXX-TQF-03-Scala.pdf" rel="nofollow">Syllabus</a>
+                | 
+                <a href="#error" title="MiyazawaClass:scala-course.18/sclass-schedule.txt" rel="nofollow">Class Schedule</a>
+                |
+                <a href="#error" title="MiyazawaClassWikiEditable:scala-course-wiki.18" rel="nofollow">Class Wiki</a>
+            </h3>
+            <h3 id="content_1_2">Lecture Note  </h3>
+            <ul class="list1" style="padding-left:16px;margin-left:16px">
+                <li><a href="https://github.com/Kawaeee/scala_ds/blob/main/scala_tutorial.pdf" title="MiyazawaClass:scala-course.18/scala_tutorial.pdf" rel="nofollow">Lecture Note</a>
+                    that includes REPL outputs as comments and is appropriate for self-study.
+                </li>
+            </ul>
+            <h3 id="content_1_4">Useful links:  </h3>
+            <ul class="list2" style="padding-left:32px;margin-left:32px">
+                <li><a href="https://www.scala-lang.org/" rel="nofollow"> Official site of Scala </a></li>
+                <li><a href="https://docs.scala-lang.org/" rel="nofollow"> Scala Documentation </a>
+                    | <a href="https://docs.scala-lang.org/tour/tour-of-scala.html" rel="nofollow">Tour of Scala </a>
+                    | <a href="https://docs.scala-lang.org/cheatsheets/index.html" rel="nofollow">Scala cheatsheet </a>
+                    | <a href="https://docs.scala-lang.org/overviews/collections/introduction.html" rel="nofollow">Collection </a>
+                    | <a href="https://superruzafa.github.io/visual-scala-reference/" rel="nofollow">Visual Scala reference </a>
+                    | <a href="https://docs.scala-lang.org/api/all.html" rel="nofollow">Scala API </a>
+                    |<a href="https://docs.oracle.com/javase/8/docs/api/" rel="nofollow"> Java 8 API </a>
+                </li>
+                <li><a href="https://www.scala-exercises.org/scala_tutorial/" rel="nofollow">Scala exercises: Scala tutorial </a>
+                    | <a href="https://www.tutorialspoint.com/scala/index.htm" rel="nofollow">Scala Tutorial </a>
+                    | <a href="https://www.coursera.org/learn/scala-spark-big-data" rel="nofollow">Online Learning at Coursera </a>
+                </li>
+            </ul>
+            <ul class="list2" style="padding-left:32px;margin-left:32px">
+                <li><a href="https://www.scala-sbt.org/documentation.html" rel="nofollow">Sbt documentation </a></li>
+            </ul>
+            <ul class="list2" style="padding-left:32px;margin-left:32px">
+                <li><a href="https://github.com/scalanlp/breeze/wiki/" rel="nofollow">Breeze brief document </a>
+                    | <a href="https://github.com/scalanlp/breeze/wiki/Linear-Algebra-Cheat-Sheet" rel="nofollow">Linear Algebra Cheat Sheet </a>
+                    | <a href="#error" title="SIT:doc/local_scaladoc_2.11/breeze_2.11-0.13.1/index.html" rel="nofollow">Breeze API </a>
+                </li>
+            </ul>
+            <ul class="list2" style="padding-left:32px;margin-left:32px">
+                <li><a href="#error" title="SIT:doc/local_scaladoc_2.11/scala-glm" rel="nofollow"> API of scala-glm </a></li>
+                <li><a href="https://github.com/dbdahl/rscala" rel="nofollow">Integration of R and Scala Using rscala </a>
+                    | <a href="https://dahl.byu.edu/software/rscala/scaladoc/org/ddahl/rscala/RClient$.html" rel="nofollow">API </a>
+                </li>
+            </ul>
+            <ul class="list2" style="padding-left:32px;margin-left:32px">
+                <li><a href="https://spark.apache.org/documentation.html" rel="nofollow">Spark documentations </a></li>
+            </ul>
+            <ul class="list2" style="padding-left:32px;margin-left:32px">
+                <li><a href="https://github.com/eaplatanios/tensorflow_scala" rel="nofollow">Tensorflow API for the Scala Language </a></li>
+            </ul>
+            <h3 id="content_1_5">Exercises for Scala language: A functional approach to data science </h3>
+            <ol class="list1" style="padding-left:16px;margin-left:16px">
+                <li>
+                    <a href="scala-introduction.html" title="MiyazawaClassWiki:scala-introduction" rel="nofollow">Introduction</a>
+                    <ul class="list2" style="padding-left:16px;margin-left:16px">
+                        <li><a href="scala-introduction.html#jb1c0d6e" title="MiyazawaClassWiki:scala-introduction" rel="nofollow">SBT and editor setup</a></li>
+                        <li><a href="scala-introduction.html#j2e112fa" title="MiyazawaClassWiki:scala-introduction" rel="nofollow">Create your own Scala SBT project. </a></li>
+                        <li><a href="scala-introduction.html#ef763e75" title="MiyazawaClassWiki:scala-introduction" rel="nofollow">Scala basics tour </a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="scala-FP-basics.html" title="MiyazawaClassWiki:scala-FP-basics" rel="nofollow">Scala and FP Basics </a>
+                    <ul class="list2" style="padding-left:16px;margin-left:16px">
+                        <li><a href="scala-FP-basics.html#w2c3e64a" title="MiyazawaClassWiki:scala-FP-basics" rel="nofollow">LogFactorial example </a></li>
+                        <li><a href="scala-FP-basics.html#kefa79c5" title="MiyazawaClassWiki:scala-FP-basics" rel="nofollow">Interval bisection </a></li>
+                        <li><a href="scala-FP-basics.html#me7215d7" title="MiyazawaClassWiki:scala-FP-basics" rel="nofollow">Scala exercises </a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="scala-collections.html" title="MiyazawaClassWiki:scala-collections" rel="nofollow">Collections </a>
+                    <ul class="list2" style="padding-left:16px;margin-left:16px">
+                        <li><a href="scala-collections.html#x2af6179" title="MiyazawaClassWiki:scala-collections" rel="nofollow">Review official documentation </a></li>
+                        <li><a href="scala-collections.html#fd75a711" title="MiyazawaClassWiki:scala-collections" rel="nofollow">Computing the sample mean and standard deviation </a></li>
+                        <li><a href="scala-collections.html#k7328ceb" title="MiyazawaClassWiki:scala-collections" rel="nofollow">Wrap interval bisection code in an Option </a></li>
+                        <li><a href="scala-collections.html#nd52d659" title="MiyazawaClassWiki:scala-collections" rel="nofollow">Write methods generating a fibonacci series </a></li>
+                        <li><a href="scala-collections.html#y5c33c92" title="MiyazawaClassWiki:scala-collections" rel="nofollow">Exercises for collections</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="scala-breeze.html" title="MiyazawaClassWiki:scala-breeze" rel="nofollow">Scala scientific and statistical computing </a>
+                    <ul class="list2" style="padding-left:16px;margin-left:16px">
+                        <li><a href="scala-breeze.html#k2849014" title="MiyazawaClassWiki:scala-breeze" rel="nofollow">Spire cfor macro </a></li>
+                        <li>Breeze: <a href="scala-breeze.html#m50173a6" title="MiyazawaClassWiki:scala-breeze" rel="nofollow">Useful links: </a></li>
+                        <li>Breeze: <a href="scala-breeze.html#re67a30b" title="MiyazawaClassWiki:scala-breeze" rel="nofollow">Review the on-line documentation </a></li>
+                        <li>BreezeL <a href="scala-breeze.html#e3adea2e" title="MiyazawaClassWiki:scala-breeze" rel="nofollow">Multivariate normal </a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="scala-mc.html" title="MiyazawaClassWiki:scala-mc" rel="nofollow">Monte Carlo methods </a>
+                    <ul class="list2" style="padding-left:16px;margin-left:16px">
+                        <li><a href="scala-mc.html#c9b04c82" title="MiyazawaClassWiki:scala-mc" rel="nofollow">Simple Monte Carlo </a></li>
+                        <li>(optional) <a href="scala-mc.html#qd58eb81" title="MiyazawaClassWiki:scala-mc" rel="nofollow">Bayesian inference for a normal random sample </a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="scala-stat-model.html" title="MiyazawaClassWiki:scala-stat-model" rel="nofollow"> Statistical modelling </a>
+                    <ul class="list2" style="padding-left:16px;margin-left:16px">
+                        <li><a href="scala-stat-model.html#adbaf91e" title="MiyazawaClassWiki:scala-stat-model" rel="nofollow">Linear regression modelling </a></li>
+                        <li><a href="scala-stat-model.html#a95d8a71" title="MiyazawaClassWiki:scala-stat-model" rel="nofollow">IRLS code optimisation </a></li>
+                        <li><a href="scala-stat-model.html#l2bee45c" title="MiyazawaClassWiki:scala-stat-model" rel="nofollow">Scala-Glm library </a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="scala-tools.html" title="MiyazawaClassWiki:scala-tools" rel="nofollow">Tools/Libraries </a>
+                    <ul class="list2" style="padding-left:16px;margin-left:16px">
+                        <li><a href="scala-tools.html#n2795b4a" title="MiyazawaClassWiki:scala-tools" rel="nofollow">ScalaDoc </a></li>
+                        <li><a href="scala-tools.html#e4863dae" title="MiyazawaClassWiki:scala-tools" rel="nofollow">(optional) Testing </a></li>
+                        <li><a href="scala-tools.html#oac6048c" title="MiyazawaClassWiki:scala-tools" rel="nofollow">Interfacing with R </a></li>
+                        <li><a href="scala-tools.html#o7761d25" title="MiyazawaClassWiki:scala-tools" rel="nofollow">Vegas: a visualisation library </a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="scala-spark.html" title="MiyazawaClassWiki:scala-spark" rel="nofollow">Apache Spark </a>
+                    <ul class="list2" style="padding-left:16px;margin-left:16px">
+                        <li><a href="scala-spark.html#zb29d352" title="MiyazawaClassWiki:scala-spark" rel="nofollow">Review some Spark documentation </a></li>
+                        <li><a href="scala-spark.html#i8ad8cc7" title="MiyazawaClassWiki:scala-spark" rel="nofollow">Logistic regression for the SpamBase dataset </a></li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        <hr class="full_hr">
+        Check out <a href="https://github.com/Kawaeee/scala_ds">GitHub</a> repository for more information!!
+    </body>
+</html>

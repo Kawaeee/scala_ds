@@ -1,121 +1,82 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <!-- saved from url=(0054)http://10.4.11.97/~miyazawa/class/wiki/scala-FP-basics -->
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" class="gr__10_4_11_97"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
- 
- <meta http-equiv="content-style-type" content="text/css">
-
- <title>scala-FP-basics - Miyazawa's Lecture Notes</title>
-
- <link rel="SHORTCUT ICON" href="http://10.4.11.97/~miyazawa/class/wiki/scala-FP-basics">
- <link rel="stylesheet" type="text/css" media="screen" href="./2_files/pukiwiki.css.php" charset="iso-8859-1">
- <link rel="stylesheet" type="text/css" media="print" href="./2_files/pukiwiki.css(1).php" charset="iso-8859-1">
- <link rel="alternate" type="application/rss+xml" title="RSS" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=rss">
-
-</head>
-<body data-gr-c-s-loaded="true">
-
-<div id="header">
- <!--
- <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?FrontPage"><img id="logo" src="image/pukiwiki.png" width="80" height="80" alt="[PukiWiki]" title="[PukiWiki]" /></a>
-
- <h1 class="title"><a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?plugin=related&amp;page=scala-FP-basics">scala-FP-basics</a> </h1>
- -->
-
-    <span class="small">
-   <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?FrontPage" title="FrontPage (138d)">Top</a> / scala-FP-basics   </span>
- 
-</div>
-
-<div id="navigator">
-
- <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?plugin=related&amp;page=scala-FP-basics">scala-FP-basics</a>  &nbsp;
- [ <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?FrontPage">Front page</a> ] &nbsp;
-
- [
-  <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=diff&amp;page=scala-FP-basics">Diff</a> 	| <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=backup&amp;page=scala-FP-basics">Backup</a>   | <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-FP-basics">Reload</a> ] &nbsp;
-
- [
-    <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=list">List of pages</a>  | <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=search">Search</a> | <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?RecentChanges">Recent changes</a> | <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?Help">Help</a> ]
-
-</div>
-
-<hr class="full_hr">
-<div id="body"><p><a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-course.18" title="scala-course.18 (1d)">scala-course.18</a></p>
-<div class="contents">
-<a id="contents_1"></a>
-<ul class="list2" style="padding-left:16px;margin-left:16px"><li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-FP-basics#o4cfa628">  Scala and FP basics </a>
-<ul class="list3" style="padding-left:16px;margin-left:16px"><li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-FP-basics#w2c3e64a">  LogFactorial example </a></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-FP-basics#kefa79c5">  Interval bisection </a></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-FP-basics#me7215d7">  Scala exercises </a></li></ul></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-FP-basics#kc0684bd">  Collections  </a></li></ul>
-</div>
-
-<h3 id="content_1_0">Scala and FP basics  <a class="anchor_super" id="o4cfa628" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-FP-basics#o4cfa628" title="o4cfa628">†</a></h3>
-
-<div class="jumpmenu"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-FP-basics#navigator">↑</a></div><h4 id="content_1_1">LogFactorial example  <a class="anchor_super" id="w2c3e64a" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-FP-basics#w2c3e64a" title="w2c3e64a">†</a></h4>
-<ul class="list2" style="padding-left:32px;margin-left:32px"><li>Find and run the complete
-exercises/C2-LogFactorial in the root-dir-for-the-course,
-using SBT, and then using run from the SBT prompt.
-<pre> $ cd exercises/C2-LogFactorial
+<!-- cleansed unused code block and adjusted some layout formatting by Kawaeee -->
+<!-- For everyone, who want to get original version of the page, please check first commit! -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" class="gr__10_4_11_97">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="content-style-type" content="text/css">
+        <title>scala-FP-basics - Miyazawa's Lecture Notes</title>
+    </head>
+    <body data-gr-c-s-loaded="true">
+        <hr class="full_hr">
+        <div id="body">
+            <p>
+            <h2 id="content_1_0">Scala language: A functional approach to data science (<a href="index.html" title="scala-course.18 (1d)">scala-course.18</a>)</p></h2>
+            <h3 id="content_1_0"><a id="o4cfa628">Scala and FP basics</a></h3>
+            <h4 id="content_1_1"><a id="w2c3e64a">LogFactorial example</a></h4>
+            <ul class="list2" style="padding-left:32px;margin-left:32px">
+                <li>
+                    Find and run the complete
+                    exercises/C2-LogFactorial in the root-dir-for-the-course,
+                    using SBT, and then using run from the SBT prompt.
+                    <pre> $ cd exercises/C2-LogFactorial
  sbt
- run</pre></li></ul>
-<ul class="list3" style="padding-left:48px;margin-left:48px"><li>Pass in an argument using, eg. run 1000. Next, drop into the REPL with console. Then enter
-<pre>import LogFact._
+ run</pre>
+                </li>
+            </ul>
+            <ul class="list3" style="padding-left:48px;margin-left:48px">
+                <li>
+                    Pass in an argument using, eg. run 1000. Next, drop into the REPL with console. Then enter
+                    <pre>import LogFact._
 logfact(100)</pre>
-So we can use the SBT REPL to run functions within our project. This is extremely useful for debugging.</li></ul>
-
-<div class="jumpmenu"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-FP-basics#navigator">↑</a></div><h4 id="content_1_2">Interval bisection  <a class="anchor_super" id="kefa79c5" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-FP-basics#kefa79c5" title="kefa79c5">†</a></h4>
-<ul class="list2" style="padding-left:32px;margin-left:32px"><li>Implement and test a recursive function for root-finding using interval bisection in the directory, exercises/C2-bisection.
-<ul class="list3" style="padding-left:16px;margin-left:16px"><li>Implement a function to find the (approximate) root of a simple function of type Double =&gt; Double using interval bisection - that is, find the input value x which makes the output of the function equal zero.</li>
-<li>Your function should have the type signature:
-<pre>findRoot(low: Double, high: Double)(f: Double =&gt; Double): Double</pre>
-You may assume that the sign of f(low) is different to the sign of f(high) - do not test or check for this in your code (yet) - we will come back to this later. Similarly, just assume that low &lt; high.</li></ul></li></ul>
-<ul class="list3" style="padding-left:48px;margin-left:48px"><li>The function should be recursive, evaluating the function at the given end points and mid-point, and then calling itself on a smaller interval where the function changes sign.</li>
-<li>You will obviously need some kind of termination criterion for the recursion.</li>
-<li>Just find a single root. Do not worry about identifying or tracking multiple roots.</li>
-<li>Some test cases are given below. Note that since your method is approximate, you can only expect approximate equality.
-<pre>findRoot(-10.0,10.0)(x =&gt; x+1.0) == -1.0
+                    So we can use the SBT REPL to run functions within our project. This is extremely useful for debugging.
+                </li>
+            </ul>
+            <h4 id="content_1_2"><a id="kefa79c5">Interval bisection</a></h4>
+            <ul class="list2" style="padding-left:32px;margin-left:32px">
+                <li>
+                    Implement and test a recursive function for root-finding using interval bisection in the directory, exercises/C2-bisection.
+                    <ul class="list3" style="padding-left:16px;margin-left:16px">
+                        <li>Implement a function to find the (approximate) root of a simple function of type Double =&gt; Double using interval bisection - that is, find the input value x which makes the output of the function equal zero.</li>
+                        <li>
+                            Your function should have the type signature:
+                            <pre>findRoot(low: Double, high: Double)(f: Double =&gt; Double): Double</pre>
+                            You may assume that the sign of f(low) is different to the sign of f(high) - do not test or check for this in your code (yet) - we will come back to this later. Similarly, just assume that low &lt; high.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="list3" style="padding-left:48px;margin-left:48px">
+                <li>The function should be recursive, evaluating the function at the given end points and mid-point, and then calling itself on a smaller interval where the function changes sign.</li>
+                <li>You will obviously need some kind of termination criterion for the recursion.</li>
+                <li>Just find a single root. Do not worry about identifying or tracking multiple roots.</li>
+                <li>
+                    Some test cases are given below. Note that since your method is approximate, you can only expect approximate equality.
+                    <pre>findRoot(-10.0,10.0)(x =&gt; x+1.0) == -1.0
 findRoot(-5.0,10.0)(x =&gt; 2.0-x) == 2.0
 findRoot(0.0,5.0)(x =&gt; x-1.0) == 1.0
 findRoot(0.0,2.0)(x =&gt; (x+1.0)*(x-1.0)) == 1.0
 findRoot(-2.0,0.0)(x =&gt; (x+1.0)*(x-1.0)) == -1.0
 findRoot(0.0,2.0)(x =&gt; x*x-2.0) == math.sqrt(2.0)</pre>
-This directory
-contains a template for a Scala implementation, including the above test cases. Run the ~test task from sbt to check your implementation.</li></ul>
-<ul class="list2" style="padding-left:32px;margin-left:32px"><li>Optional: experts may want to consider using continuation passing to avoid repeated evaluation of the function at the same values.</li></ul>
-
-<div class="jumpmenu"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-FP-basics#navigator">↑</a></div><h4 id="content_1_3">Scala exercises  <a class="anchor_super" id="me7215d7" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-FP-basics#me7215d7" title="me7215d7">†</a></h4>
-<ul class="list2" style="padding-left:32px;margin-left:32px"><li>Start to work through
-<a href="https://www.scala-exercises.org/scala_tutorial/terms_and_types" rel="nofollow">the interactive Scala tutorial </a>
-from Scala exercises. Do the first couple of sections. Try to work through everything up to and including "Syntactic Conveniences" in any spare time you have over the next couple of days.</li>
-<li><strong>Do this task after completing "Scala tour"</strong>. <strong>Complete this task for another month</strong>.</li></ul>
-
-<div class="jumpmenu"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-FP-basics#navigator">↑</a></div><h3 id="content_1_4"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-collections" title="MiyazawaClassWiki:scala-collections" rel="nofollow">Collections </a>  <a class="anchor_super" id="kc0684bd" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-FP-basics#kc0684bd" title="kc0684bd">†</a></h3>
-</div>
-
-
-
-<hr class="full_hr">
-<!-- Toolbar -->
-<div id="toolbar">
-
- <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?FrontPage"><img src="./2_files/top.png" width="20" height="20" alt="Front page" title="Front page"></a>
- &nbsp;
-  <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=diff&amp;page=scala-FP-basics"><img src="./2_files/diff.png" width="20" height="20" alt="Diff" title="Diff"></a>	<a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=backup&amp;page=scala-FP-basics"><img src="./2_files/backup.png" width="20" height="20" alt="Backup" title="Backup"></a> <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-FP-basics"><img src="./2_files/reload.png" width="20" height="20" alt="Reload" title="Reload"></a> &nbsp;
- <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=list"><img src="./2_files/list.png" width="20" height="20" alt="List of pages" title="List of pages"></a> <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=search"><img src="./2_files/search.png" width="20" height="20" alt="Search" title="Search"></a> <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?RecentChanges"><img src="./2_files/recentchanges.png" width="20" height="20" alt="Recent changes" title="Recent changes"></a> &nbsp; <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?Help"><img src="./2_files/help.png" width="20" height="20" alt="Help" title="Help"></a> &nbsp; <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=rss&amp;ver=1.0"><img src="./2_files/rss.png" width="36" height="14" alt="RSS of recent changes" title="RSS of recent changes"></a></div>
-
-<div id="lastmodified"> <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?plugin=related&amp;page=scala-FP-basics">scala-FP-basics</a> ; &nbsp; Last-modified: 2018-05-18 (Fri) 12:58:32  (197d)</div>
-
-<div id="related">Link: <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-course.18">scala-course.18</a>(1d)</div>
-
-<div id="footer">
- Site admin: <a href="mailto:miyazawa@sanzo.org">MIYAZAWA, Sanzo</a>
-<p>
-
- <strong>PukiWiki 1.4.7</strong> Copyright © 2001-2006 <a href="http://pukiwiki.sourceforge.jp/">PukiWiki Developers Team</a>. License is <a href="http://www.gnu.org/licenses/gpl.html">GPL</a>.<br> Based on "PukiWiki" 1.3 by <a href="http://factage.com/yu-ji/">yu-ji</a>.
- Powered by PHP 5.6.24-0+deb8u1. HTML conversion time: 0.005 sec.
-</p></div>
-
-
-
-</body></html>
+                    This directory
+                    contains a template for a Scala implementation, including the above test cases. Run the ~test task from sbt to check your implementation.
+                </li>
+            </ul>
+            <ul class="list2" style="padding-left:32px;margin-left:32px">
+                <li>Optional: experts may want to consider using continuation passing to avoid repeated evaluation of the function at the same values.</li>
+            </ul>
+            <h4 id="content_1_3"><a id="me7215d7">Scala exercises</a></h4>
+            <ul class="list2" style="padding-left:32px;margin-left:32px">
+                <li>Start to work through
+                    <a href="https://www.scala-exercises.org/scala_tutorial/terms_and_types" rel="nofollow">the interactive Scala tutorial </a>
+                    from Scala exercises. Do the first couple of sections. Try to work through everything up to and including "Syntactic Conveniences" in any spare time you have over the next couple of days.
+                </li>
+                <li><strong>Do this task after completing "Scala tour"</strong>. <strong>Complete this task for another month</strong>.</li>
+            </ul>
+            <h3 id="content_1_4"><a href="scala-collections.html" title="MiyazawaClassWiki:scala-collections" rel="nofollow">NEXT: Collections</a></h3>
+        </div>
+        <hr class="full_hr">
+        Check out <a href="https://github.com/Kawaeee/scala_ds">GitHub</a> repository for more information!!
+    </body>
+</html>

@@ -1,111 +1,70 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <!-- saved from url=(0055)http://10.4.11.97/~miyazawa/class/wiki/scala-stat-model -->
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" class="gr__10_4_11_97"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
- 
- <meta http-equiv="content-style-type" content="text/css">
-
- <title>scala-stat-model - Miyazawa's Lecture Notes</title>
-
- <link rel="SHORTCUT ICON" href="http://10.4.11.97/~miyazawa/class/wiki/scala-stat-model">
- <link rel="stylesheet" type="text/css" media="screen" href="./6_files/pukiwiki.css.php" charset="iso-8859-1">
- <link rel="stylesheet" type="text/css" media="print" href="./6_files/pukiwiki.css(1).php" charset="iso-8859-1">
- <link rel="alternate" type="application/rss+xml" title="RSS" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=rss">
-
-</head>
-<body data-gr-c-s-loaded="true">
-
-<div id="header">
- <!--
- <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?FrontPage"><img id="logo" src="image/pukiwiki.png" width="80" height="80" alt="[PukiWiki]" title="[PukiWiki]" /></a>
-
- <h1 class="title"><a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?plugin=related&amp;page=scala-stat-model">scala-stat-model</a> </h1>
- -->
-
-    <span class="small">
-   <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?FrontPage" title="FrontPage (138d)">Top</a> / scala-stat-model   </span>
- 
-</div>
-
-<div id="navigator">
-
- <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?plugin=related&amp;page=scala-stat-model">scala-stat-model</a>  &nbsp;
- [ <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?FrontPage">Front page</a> ] &nbsp;
-
- [
-  <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=diff&amp;page=scala-stat-model">Diff</a> 	| <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=backup&amp;page=scala-stat-model">Backup</a>   | <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-stat-model">Reload</a> ] &nbsp;
-
- [
-    <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=list">List of pages</a>  | <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=search">Search</a> | <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?RecentChanges">Recent changes</a> | <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?Help">Help</a> ]
-
-</div>
-
-<hr class="full_hr">
-<div id="body"><p><a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-course.18" title="scala-course.18 (1d)">scala-course.18</a></p>
-<div class="contents">
-<a id="contents_1"></a>
-<ul class="list2" style="padding-left:16px;margin-left:16px"><li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-stat-model#tbb023bd">  Statistical modelling </a>
-<ul class="list3" style="padding-left:16px;margin-left:16px"><li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-stat-model#adbaf91e">  Linear regression modelling </a></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-stat-model#a95d8a71">  IRLS code optimisation </a></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-stat-model#l2bee45c">  Scala-Glm library </a></li></ul></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-stat-model#k75d61bf">  Tools/Libraries  </a></li></ul>
-</div>
-
-<h3 id="content_1_0">Statistical modelling  <a class="anchor_super" id="tbb023bd" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-stat-model#tbb023bd" title="tbb023bd">†</a></h3>
-
-<div class="jumpmenu"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-stat-model#navigator">↑</a></div><h4 id="content_1_1">Linear regression modelling  <a class="anchor_super" id="adbaf91e" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-stat-model#adbaf91e" title="adbaf91e">†</a></h4>
-<ul class="list2" style="padding-left:32px;margin-left:32px"><li>Copy example/C6-Regression as exercises/C6-Regression_yacht, and then
-run
-for
-<a href="http://archive.ics.uci.edu/ml/datasets/Yacht+Hydrodynamics" rel="nofollow">the yacht hydrodynamics dataset </a>,
-and go through the code carefully to understand exactly how it works.</li></ul>
-<ul class="list2" style="padding-left:32px;margin-left:32px"><li>When you are happy with it,
-make a copy as exercises/C6-Regression_airfoil
-and edit it to do a regression analysis for
-<a href="http://archive.ics.uci.edu/ml/datasets/Airfoil+Self-Noise" rel="nofollow">the airfoil self-noise dataset </a>.
-Which variables are significant for predicting scaled sound pressure?</li></ul>
-
-<div class="jumpmenu"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-stat-model#navigator">↑</a></div><h4 id="content_1_2">IRLS code optimisation  <a class="anchor_super" id="a95d8a71" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-stat-model#a95d8a71" title="a95d8a71">†</a></h4>
-<ul class="list2" style="padding-left:32px;margin-left:32px"><li>Make sure you can run the logistic regression example
-from the notes using the simple IRLS function that was provided in the directory
-exercises/C6-GLM.</li></ul>
-<ul class="list2" style="padding-left:32px;margin-left:32px"><li>The IRLS function is illustrative rather than efficient. There are many ways in which the code could be made more efficient. We will start with the weight matrix, W. This is an n x n matrix, which is bad-news if n is large. But it's diagonal, so it could easily be represented by an n-vector. Modify the code to make W a vector rather than a matrix, and check it gives the same results as the previous version. Time it on some big problems to see if it's perceptibly faster.</li></ul>
-<ul class="list2" style="padding-left:32px;margin-left:32px"><li>(optional) Google the efficient implementation of IRLS (using QR decomposition), and implement it. Check it works and that it's faster.</li></ul>
-
-<div class="jumpmenu"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-stat-model#navigator">↑</a></div><h4 id="content_1_3">Scala-Glm library  <a class="anchor_super" id="l2bee45c" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-stat-model#l2bee45c" title="l2bee45c">†</a></h4>
-<ul class="list2" style="padding-left:32px;margin-left:32px"><li>A small library was created for fitting linear and generalised linear models, based on the code examples from this course.
-See the <a href="https://github.com/darrenjw/scala-glm" rel="nofollow">scala-glm </a>
-repo for further details.</li></ul>
-<ul class="list2" style="padding-left:32px;margin-left:32px"><li>Get this library and expand it as exercise/C6-scala-glm , and then
-try it out and make sure you know how to use it.</li></ul>
-<ul class="list2" style="padding-left:32px;margin-left:32px"><li>Once you have figured out how it works, take some time to browse the source code. This is a small library with a relatively simple structure. It serves as an example of how to create a small library with a few source files and a few test files. It is a little bit bigger than the very small examples we have been focussing on in this course, but a lot smaller than a large library like Breeze, which can be a bit daunting at first.</li></ul>
-<ul class="list2" style="padding-left:32px;margin-left:32px"><li>Look at how the author has (re-)structured the GLM code, and how he has implemented the IRLS algorithm.</li></ul>
-
-<div class="jumpmenu"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-stat-model#navigator">↑</a></div><h3 id="content_1_4"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-tools" title="MiyazawaClassWiki:scala-tools" rel="nofollow">Tools/Libraries </a>  <a class="anchor_super" id="k75d61bf" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-stat-model#k75d61bf" title="k75d61bf">†</a></h3>
-</div>
-
-
-
-<hr class="full_hr">
-<!-- Toolbar -->
-<div id="toolbar">
-
- <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?FrontPage"><img src="./6_files/top.png" width="20" height="20" alt="Front page" title="Front page"></a>
- &nbsp;
-  <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=diff&amp;page=scala-stat-model"><img src="./6_files/diff.png" width="20" height="20" alt="Diff" title="Diff"></a>	<a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=backup&amp;page=scala-stat-model"><img src="./6_files/backup.png" width="20" height="20" alt="Backup" title="Backup"></a> <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-stat-model"><img src="./6_files/reload.png" width="20" height="20" alt="Reload" title="Reload"></a> &nbsp;
- <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=list"><img src="./6_files/list.png" width="20" height="20" alt="List of pages" title="List of pages"></a> <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=search"><img src="./6_files/search.png" width="20" height="20" alt="Search" title="Search"></a> <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?RecentChanges"><img src="./6_files/recentchanges.png" width="20" height="20" alt="Recent changes" title="Recent changes"></a> &nbsp; <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?Help"><img src="./6_files/help.png" width="20" height="20" alt="Help" title="Help"></a> &nbsp; <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=rss&amp;ver=1.0"><img src="./6_files/rss.png" width="36" height="14" alt="RSS of recent changes" title="RSS of recent changes"></a></div>
-
-<div id="lastmodified"> <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?plugin=related&amp;page=scala-stat-model">scala-stat-model</a> ; &nbsp; Last-modified: 2018-10-29 (Mon) 18:15:30  (33d)</div>
-
-<div id="related">Link: <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-course.18">scala-course.18</a>(1d)</div>
-
-<div id="footer">
- Site admin: <a href="mailto:miyazawa@sanzo.org">MIYAZAWA, Sanzo</a>
-<p>
-
- <strong>PukiWiki 1.4.7</strong> Copyright © 2001-2006 <a href="http://pukiwiki.sourceforge.jp/">PukiWiki Developers Team</a>. License is <a href="http://www.gnu.org/licenses/gpl.html">GPL</a>.<br> Based on "PukiWiki" 1.3 by <a href="http://factage.com/yu-ji/">yu-ji</a>.
- Powered by PHP 5.6.24-0+deb8u1. HTML conversion time: 0.005 sec.
-</p></div>
-
-
-
-</body></html>
+<!-- cleansed unused code block and adjusted some layout formatting by Kawaeee -->
+<!-- For everyone, who want to get original version of the page, please check first commit! -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" class="gr__10_4_11_97">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="content-style-type" content="text/css">
+        <title>scala-stat-model - Miyazawa's Lecture Notes</title>
+    </head>
+    <body data-gr-c-s-loaded="true">
+        <hr class="full_hr">
+        <div id="body">
+            <p>
+            <h2 id="content_1_0">Scala language: A functional approach to data science (<a href="index.html" title="scala-course.18 (1d)">scala-course.18</a>)</p></h2>
+            <h3 id="content_1_0"><a id="tbb023bd">Statistical modelling</a></h3>
+            <h4 id="content_1_1"><a id="adbaf91e">Linear regression modelling</a></h4>
+            <ul class="list2" style="padding-left:32px;margin-left:32px">
+                <li>Copy example/C6-Regression as exercises/C6-Regression_yacht, and then
+                    run
+                    for
+                    <a href="http://archive.ics.uci.edu/ml/datasets/Yacht+Hydrodynamics" rel="nofollow">the yacht hydrodynamics dataset </a>,
+                    and go through the code carefully to understand exactly how it works.
+                </li>
+            </ul>
+            <ul class="list2" style="padding-left:32px;margin-left:32px">
+                <li>When you are happy with it,
+                    make a copy as exercises/C6-Regression_airfoil
+                    and edit it to do a regression analysis for
+                    <a href="http://archive.ics.uci.edu/ml/datasets/Airfoil+Self-Noise" rel="nofollow">the airfoil self-noise dataset </a>.
+                    Which variables are significant for predicting scaled sound pressure?
+                </li>
+            </ul>
+            <h4 id="content_1_2"><a id="a95d8a71">IRLS code optimisation</a></h4>
+            <ul class="list2" style="padding-left:32px;margin-left:32px">
+                <li>Make sure you can run the logistic regression example
+                    from the notes using the simple IRLS function that was provided in the directory
+                    exercises/C6-GLM.
+                </li>
+            </ul>
+            <ul class="list2" style="padding-left:32px;margin-left:32px">
+                <li>The IRLS function is illustrative rather than efficient. There are many ways in which the code could be made more efficient. We will start with the weight matrix, W. This is an n x n matrix, which is bad-news if n is large. But it's diagonal, so it could easily be represented by an n-vector. Modify the code to make W a vector rather than a matrix, and check it gives the same results as the previous version. Time it on some big problems to see if it's perceptibly faster.</li>
+            </ul>
+            <ul class="list2" style="padding-left:32px;margin-left:32px">
+                <li>(optional) Google the efficient implementation of IRLS (using QR decomposition), and implement it. Check it works and that it's faster.</li>
+            </ul>
+            <h4 id="content_1_3"><a id="l2bee45c">Scala-Glm library</a></h4>
+            <ul class="list2" style="padding-left:32px;margin-left:32px">
+                <li>A small library was created for fitting linear and generalised linear models, based on the code examples from this course.
+                    See the <a href="https://github.com/darrenjw/scala-glm" rel="nofollow">scala-glm </a>
+                    repo for further details.
+                </li>
+            </ul>
+            <ul class="list2" style="padding-left:32px;margin-left:32px">
+                <li>Get this library and expand it as exercise/C6-scala-glm , and then
+                    try it out and make sure you know how to use it.
+                </li>
+            </ul>
+            <ul class="list2" style="padding-left:32px;margin-left:32px">
+                <li>Once you have figured out how it works, take some time to browse the source code. This is a small library with a relatively simple structure. It serves as an example of how to create a small library with a few source files and a few test files. It is a little bit bigger than the very small examples we have been focussing on in this course, but a lot smaller than a large library like Breeze, which can be a bit daunting at first.</li>
+            </ul>
+            <ul class="list2" style="padding-left:32px;margin-left:32px">
+                <li>Look at how the author has (re-)structured the GLM code, and how he has implemented the IRLS algorithm.</li>
+            </ul>
+            <h3 id="content_1_4"><a href="scala-tools.html" title="MiyazawaClassWiki:scala-tools" rel="nofollow">NEXT: Tools/Libraries</a></h3>
+        </div>
+        <hr class="full_hr">
+        Check out <a href="https://github.com/Kawaeee/scala_ds">GitHub</a> repository for more information!!
+    </body>
+</html>

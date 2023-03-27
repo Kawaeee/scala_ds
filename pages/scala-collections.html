@@ -1,161 +1,142 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <!-- saved from url=(0056)http://10.4.11.97/~miyazawa/class/wiki/scala-collections -->
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" class="gr__10_4_11_97"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
- 
- <meta http-equiv="content-style-type" content="text/css">
-
- <title>scala-collections - Miyazawa's Lecture Notes</title>
-
- <link rel="SHORTCUT ICON" href="http://10.4.11.97/~miyazawa/class/wiki/scala-collections">
- <link rel="stylesheet" type="text/css" media="screen" href="./3_files/pukiwiki.css.php" charset="iso-8859-1">
- <link rel="stylesheet" type="text/css" media="print" href="./3_files/pukiwiki.css(1).php" charset="iso-8859-1">
- <link rel="alternate" type="application/rss+xml" title="RSS" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=rss">
-
-</head>
-<body data-gr-c-s-loaded="true">
-
-<div id="header">
- <!--
- <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?FrontPage"><img id="logo" src="image/pukiwiki.png" width="80" height="80" alt="[PukiWiki]" title="[PukiWiki]" /></a>
-
- <h1 class="title"><a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?plugin=related&amp;page=scala-collections">scala-collections</a> </h1>
- -->
-
-    <span class="small">
-   <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?FrontPage" title="FrontPage (138d)">Top</a> / scala-collections   </span>
- 
-</div>
-
-<div id="navigator">
-
- <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?plugin=related&amp;page=scala-collections">scala-collections</a>  &nbsp;
- [ <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?FrontPage">Front page</a> ] &nbsp;
-
- [
-  <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=diff&amp;page=scala-collections">Diff</a> 	| <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=backup&amp;page=scala-collections">Backup</a>   | <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-collections">Reload</a> ] &nbsp;
-
- [
-    <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=list">List of pages</a>  | <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=search">Search</a> | <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?RecentChanges">Recent changes</a> | <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?Help">Help</a> ]
-
-</div>
-
-<hr class="full_hr">
-<div id="body"><p><a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-course.18" title="scala-course.18 (1d)">scala-course.18</a></p>
-<div class="contents">
-<a id="contents_1"></a>
-<ul class="list2" style="padding-left:16px;margin-left:16px"><li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-collections#u81f68c1">  Collections </a>
-<ul class="list3" style="padding-left:16px;margin-left:16px"><li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-collections#x2af6179">  Review documentations </a></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-collections#fd75a711">  Computing the sample mean and standard deviation </a></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-collections#k7328ceb">  Wrap interval bisection code in an Option </a></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-collections#nd52d659">  Write methods gnerating a fibonacci series, f_n = f_(n-1) + f_(n-2) given f_0, f_1 and n, in the following 4 ways; copy the app-template directory as the exercises/C3-fibonacci directory, and then write methods whose names are fib1, fib2, fib3, and fib4.  The object name should be "Fibonacci". </a></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-collections#y5c33c92">  Exercises for collections; copy the app-template directory as the exercises/C3-monads </a></li></ul></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-collections#y125539d"> Breeze  </a></li></ul>
-</div>
-
-<h3 id="content_1_0">Collections  <a class="anchor_super" id="u81f68c1" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-collections#u81f68c1" title="u81f68c1">†</a></h3>
-
-<div class="jumpmenu"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-collections#navigator">↑</a></div><h4 id="content_1_1">Review documentations  <a class="anchor_super" id="x2af6179" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-collections#x2af6179" title="x2af6179">†</a></h4>
-<ul class="list2" style="padding-left:32px;margin-left:32px"><li>(optional) Briefly review
-<a href="https://docs.scala-lang.org/overviews/collections/introduction.html" rel="nofollow">the official collections overview </a>,
-concentrating in particular on immutable collection classes, and also
-<a href="https://docs.scala-lang.org/overviews/parallel-collections/overview.html" rel="nofollow">the parallel collections overview</a>.
-Try some code examples in a REPL.</li>
-<li>You may also find
-<a href="https://superruzafa.github.io/visual-scala-reference/index.html" rel="nofollow">the visual scala collections </a>
-reference helpful.</li></ul>
-
-<div class="jumpmenu"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-collections#navigator">↑</a></div><h4 id="content_1_2">Computing the sample mean and standard deviation  <a class="anchor_super" id="fd75a711" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-collections#fd75a711" title="fd75a711">†</a></h4>
-<ol class="list2" style="padding-left:32px;margin-left:32px"><li>By copying the app-template directory as the exercises/C3-meanAndSD directory (or otherwise),
-create a new Scala SBT project. Write a function with signature
-<pre>meanAndSD(x: Vector[Double]): (Double, Double)</pre>
-which returns a tuple containing the sample mean and
-<a href="https://en.wikipedia.org/wiki/Standard_deviation" rel="nofollow">sample standard deviation </a> of the collection of numbers.</li>
-<li>When you get it working, write some tests to check it works on a few trivial examples.</li>
-<li>Generalise it so that it works for any collection of Doubles, and check that it works for parallel as well as serial collections.</li>
-<li>You have probably written this code so that it computes the mean and SD using two passes over the data. Can you figure out a way to implement it using just a single pass?</li>
-<li>Test your function on huge collections of random U(0,1) quantities. What should the true mean and standard devaition be?
-<pre> import breeze.stats.distributions._
+<!-- cleansed unused code block and adjusted some layout formatting by Kawaeee -->
+<!-- For everyone, who want to get original version of the page, please check first commit! -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" class="gr__10_4_11_97">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="content-style-type" content="text/css">
+        <title>scala-collections - Miyazawa's Lecture Notes</title>
+    </head>
+    <body data-gr-c-s-loaded="true">
+        <hr class="full_hr">
+        <div id="body">
+            <p>
+            <h2 id="content_1_0">Scala language: A functional approach to data science (<a href="index.html" title="scala-course.18 (1d)">scala-course.18</a>)</p></h2>
+            <h3 id="content_1_0"><a id="u81f68c1">Collections</a></h3>
+            <h4 id="content_1_1"><a id="x2af6179">Review documentations</a></h4>
+            <ul class="list2" style="padding-left:32px;margin-left:32px">
+                <li>(optional) Briefly review
+                    <a href="https://docs.scala-lang.org/overviews/collections/introduction.html" rel="nofollow">the official collections overview </a>,
+                    concentrating in particular on immutable collection classes, and also
+                    <a href="https://docs.scala-lang.org/overviews/parallel-collections/overview.html" rel="nofollow">the parallel collections overview</a>.
+                    Try some code examples in a REPL.
+                </li>
+                <li>You may also find
+                    <a href="https://superruzafa.github.io/visual-scala-reference/index.html" rel="nofollow">the visual scala collections </a>
+                    reference helpful.
+                </li>
+            </ul>
+            <h4 id="content_1_2"><a id="fd75a711">Computing the sample mean and standard deviation</a></h4>
+            <ol class="list2" style="padding-left:32px;margin-left:32px">
+                <li>
+                    By copying the app-template directory as the exercises/C3-meanAndSD directory (or otherwise),
+                    create a new Scala SBT project. Write a function with signature
+                    <pre>meanAndSD(x: Vector[Double]): (Double, Double)</pre>
+                    which returns a tuple containing the sample mean and
+                    <a href="https://en.wikipedia.org/wiki/Standard_deviation" rel="nofollow">sample standard deviation </a> of the collection of numbers.
+                </li>
+                <li>When you get it working, write some tests to check it works on a few trivial examples.</li>
+                <li>Generalise it so that it works for any collection of Doubles, and check that it works for parallel as well as serial collections.</li>
+                <li>You have probably written this code so that it computes the mean and SD using two passes over the data. Can you figure out a way to implement it using just a single pass?</li>
+                <li>
+                    Test your function on huge collections of random U(0,1) quantities. What should the true mean and standard devaition be?
+                    <pre> import breeze.stats.distributions._
  val v = Vector.fill(10000)(Uniform(0, 1).sample)
- // v: scala.collection.immutable.Vector[Double] = Vector(0.9..., 0.16..., ...)</pre></li>
-<li>Can you detect a difference in speed between the serial and parallel versions?
-<pre> import breeze.stats.distributions._
+ // v: scala.collection.immutable.Vector[Double] = Vector(0.9..., 0.16..., ...)</pre>
+                </li>
+                <li>
+                    Can you detect a difference in speed between the serial and parallel versions?
+                    <pre> import breeze.stats.distributions._
  val v = ParVector.fill(10000)(Uniform(0, 1).sample)
- // v: scala.collection.immutable.ParVector[Double] = ParVector(0.9..., 0.16..., ...)</pre></li></ol>
-
-<div class="jumpmenu"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-collections#navigator">↑</a></div><h4 id="content_1_3">Wrap interval bisection code in an Option  <a class="anchor_super" id="k7328ceb" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-collections#k7328ceb" title="k7328ceb">†</a></h4>
-<ul class="list2" style="padding-left:32px;margin-left:32px"><li>Starting from the code you wrote for interval bisection previously, make it safe by wrapping it in an Option;
-copy exercises/C2-bisection as exercises/C3-bisection.</li></ul>
-<ul class="list2" style="padding-left:32px;margin-left:32px"><li>Part A
-<ul class="list3" style="padding-left:16px;margin-left:16px"><li>Copy your previous findRoot function from the previous exercise, and add a new function findRootOpt which wraps it, so that instead of returning a Double it returns Option[Double]. The new signature is:
-<pre> findRootOpt(low: Double, high: Double)(f: Double =&gt; Double): Option[Double]</pre>
-Add checks that low &lt; high and that the sign of f(low) is different from the sign of f(high) and return None if either check fails. Otherwise your function should behave as previously, returning the root in a Some.</li></ul></li></ul>
-<ul class="list3" style="padding-left:48px;margin-left:48px"><li>All of the previous test case translate obviously as follows:
-<pre>findRootOpt(-10.0,10.0)(x =&gt; x+1.0) == Some(-1.0)
+ // v: scala.collection.immutable.ParVector[Double] = ParVector(0.9..., 0.16..., ...)</pre>
+                </li>
+            </ol>
+            <h4 id="content_1_3"><a id="k7328ceb">Wrap interval bisection code in an Option</a></h4>
+            <ul class="list2" style="padding-left:32px;margin-left:32px">
+                <li>Starting from the code you wrote for interval bisection previously, make it safe by wrapping it in an Option;
+                    copy exercises/C2-bisection as exercises/C3-bisection.
+                </li>
+            </ul>
+            <ul class="list2" style="padding-left:32px;margin-left:32px">
+                <li>
+                    Part A
+                    <ul class="list3" style="padding-left:16px;margin-left:16px">
+                        <li>
+                            Copy your previous findRoot function from the previous exercise, and add a new function findRootOpt which wraps it, so that instead of returning a Double it returns Option[Double]. The new signature is:
+                            <pre> findRootOpt(low: Double, high: Double)(f: Double =&gt; Double): Option[Double]</pre>
+                            Add checks that low &lt; high and that the sign of f(low) is different from the sign of f(high) and return None if either check fails. Otherwise your function should behave as previously, returning the root in a Some.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="list3" style="padding-left:48px;margin-left:48px">
+                <li>
+                    All of the previous test case translate obviously as follows:
+                    <pre>findRootOpt(-10.0,10.0)(x =&gt; x+1.0) == Some(-1.0)
 findRootOpt(-5.0,10.0)(x =&gt; 2.0-x) == Some(2.0)
 findRootOpt(0.0,5.0)(x =&gt; x-1.0) == Some(1.0)
 findRootOpt(0.0,2.0)(x =&gt; (x+1.0)*(x-1.0)) == Some(1.0)
 findRootOpt(-2.0,0.0)(x =&gt; (x+1.0)*(x-1.0)) == Some(-1.0)
 findRootOpt(0.0,2.0)(x =&gt; x*x-2.0) == Some(math.sqrt(2.0))</pre>
-In addition, we can add some new test cases which test the inital assumptions:
-<pre>findRootOpt(2.0,0.0)(x =&gt; x-1.0) == None
+                    In addition, we can add some new test cases which test the inital assumptions:
+                    <pre>findRootOpt(2.0,0.0)(x =&gt; x-1.0) == None
 findRootOpt(-1.0,-3.0)(x =&gt; x+2.0) == None
 findRootOpt(0.0,2.0)(x =&gt; x+1.0) == None
 findRootOpt(0.0,2.0)(x =&gt; x-5.0) == None</pre>
-Again, these test cases are all included in the associated Scala template in this directory, and can be run with the
-<pre>~testOnly PartA </pre>
-ask in sbt; see "7.3 Testing" of the lecture note for testing.</li></ul>
-<ul class="list2" style="padding-left:32px;margin-left:32px"><li>Part B (if time permits)</li></ul>
-<ul class="list3" style="padding-left:48px;margin-left:48px"><li>The quadratic curve y = a*x*x for any fixed a &gt; 0 intersects the unit circle x*x + y*y = 1 exactly once for 0 &lt;= x &lt;= 1. Our task is to use our function findRootOpt to find this x.</li></ul>
-<ul class="list3" style="padding-left:48px;margin-left:48px"><li>Using just a tiny bit of maths, we can write the solution to this problem as the solution to the triangular system:
-<pre>y - a*(1-y*y) = 0
+                    Again, these test cases are all included in the associated Scala template in this directory, and can be run with the
+                    <pre>~testOnly PartA </pre>
+                    ask in sbt; see "7.3 Testing" of the lecture note for testing.
+                </li>
+            </ul>
+            <ul class="list2" style="padding-left:32px;margin-left:32px">
+                <li>Part B (if time permits)</li>
+            </ul>
+            <ul class="list3" style="padding-left:48px;margin-left:48px">
+                <li>The quadratic curve y = a*x*x for any fixed a &gt; 0 intersects the unit circle x*x + y*y = 1 exactly once for 0 &lt;= x &lt;= 1. Our task is to use our function findRootOpt to find this x.</li>
+            </ul>
+            <ul class="list3" style="padding-left:48px;margin-left:48px">
+                <li>
+                    Using just a tiny bit of maths, we can write the solution to this problem as the solution to the triangular system:
+                    <pre>y - a*(1-y*y) = 0
 x*x + y*y -1 = 0</pre>
-The left hand side of first equation will clearly be negative at y=0 and positive at y=1. Then for 0 &lt;= y &lt;= 1, the left hand side of the second equation will be negative at x=0 and positive at x=1.</li></ul>
-<ul class="list3" style="padding-left:48px;margin-left:48px"><li>Write a function, solveQuad, which accepts a value a, and uses a for-expression with findRootOpt to obtain the solution for x. It should have signature:
-<pre>solveQuad(a: Double): Option[Double]</pre>
-We can test this function by picking an a, solving for x, computing y = a*x*x, then checking whether x*x + y*y = 1. Some example tests are included in the Scala template in this directory.</li></ul>
-<ul class="list3" style="padding-left:48px;margin-left:48px"><li>You can run all tests for Part A and Part B with the ~test task in sbt, or just the specific tests for Part B with ~testOnly PartB.</li></ul>
-
-<div class="jumpmenu"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-collections#navigator">↑</a></div><h4 id="content_1_4">Write methods gnerating a fibonacci series, f_n = f_(n-1) + f_(n-2) given f_0, f_1 and n, in the following 4 ways; copy the app-template directory as the exercises/C3-fibonacci directory, and then write methods whose names are fib1, fib2, fib3, and fib4.  The object name should be "Fibonacci".  <a class="anchor_super" id="nd52d659" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-collections#nd52d659" title="nd52d659">†</a></h4>
-<pre> def fib1(f0: Int, f1: Int, n: Int): Int </pre>
-<ol class="list1" style="padding-left:16px;margin-left:16px"><li>Use "var".</li>
-<li>Use a recursion; "var" cannot be used.</li>
-<li>Use a tail recursion.; "var" cannot be used.</li>
-<li>Use "Stream"; "var" cannot be used.</li></ol>
-
-<div class="jumpmenu"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-collections#navigator">↑</a></div><h4 id="content_1_5">Exercises for collections; copy the app-template directory as the exercises/C3-monads  <a class="anchor_super" id="y5c33c92" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-collections#y5c33c92" title="y5c33c92">†</a></h4>
-<ol class="list1" style="padding-left:16px;margin-left:16px"><li>Write a method calculating a weighted average; use "zip"; sum_i a_i * w_i / sum_i w_i
-<pre> def weightedAverage(a: Array[Double], w: Array[Double]) = { ... }</pre></li>
-<li>Write a method that concatenating characters to a single string by using
-one of the methods, reduce, reduceLeft and reduceRight.
-The signature should be the following.
-<pre>       def concatenate(c: Vector[Char]): String</pre></li></ol>
-
-<div class="jumpmenu"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-collections#navigator">↑</a></div><h3 id="content_1_6"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-breeze" title="MiyazawaClassWiki:scala-breeze" rel="nofollow">Breeze </a>  <a class="anchor_super" id="y125539d" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-collections#y125539d" title="y125539d">†</a></h3>
-</div>
-
-
-
-<hr class="full_hr">
-<!-- Toolbar -->
-<div id="toolbar">
-
- <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?FrontPage"><img src="./3_files/top.png" width="20" height="20" alt="Front page" title="Front page"></a>
- &nbsp;
-  <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=diff&amp;page=scala-collections"><img src="./3_files/diff.png" width="20" height="20" alt="Diff" title="Diff"></a>	<a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=backup&amp;page=scala-collections"><img src="./3_files/backup.png" width="20" height="20" alt="Backup" title="Backup"></a> <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-collections"><img src="./3_files/reload.png" width="20" height="20" alt="Reload" title="Reload"></a> &nbsp;
- <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=list"><img src="./3_files/list.png" width="20" height="20" alt="List of pages" title="List of pages"></a> <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=search"><img src="./3_files/search.png" width="20" height="20" alt="Search" title="Search"></a> <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?RecentChanges"><img src="./3_files/recentchanges.png" width="20" height="20" alt="Recent changes" title="Recent changes"></a> &nbsp; <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?Help"><img src="./3_files/help.png" width="20" height="20" alt="Help" title="Help"></a> &nbsp; <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=rss&amp;ver=1.0"><img src="./3_files/rss.png" width="36" height="14" alt="RSS of recent changes" title="RSS of recent changes"></a></div>
-
-<div id="lastmodified"> <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?plugin=related&amp;page=scala-collections">scala-collections</a> ; &nbsp; Last-modified: 2018-09-28 (Fri) 16:09:29  (64d)</div>
-
-<div id="related">Link: <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-course.18">scala-course.18</a>(1d)</div>
-
-<div id="footer">
- Site admin: <a href="mailto:miyazawa@sanzo.org">MIYAZAWA, Sanzo</a>
-<p>
-
- <strong>PukiWiki 1.4.7</strong> Copyright © 2001-2006 <a href="http://pukiwiki.sourceforge.jp/">PukiWiki Developers Team</a>. License is <a href="http://www.gnu.org/licenses/gpl.html">GPL</a>.<br> Based on "PukiWiki" 1.3 by <a href="http://factage.com/yu-ji/">yu-ji</a>.
- Powered by PHP 5.6.24-0+deb8u1. HTML conversion time: 0.007 sec.
-</p></div>
-
-
-
-</body></html>
+                    The left hand side of first equation will clearly be negative at y=0 and positive at y=1. Then for 0 &lt;= y &lt;= 1, the left hand side of the second equation will be negative at x=0 and positive at x=1.
+                </li>
+            </ul>
+            <ul class="list3" style="padding-left:48px;margin-left:48px">
+                <li>
+                    Write a function, solveQuad, which accepts a value a, and uses a for-expression with findRootOpt to obtain the solution for x. It should have signature:
+                    <pre>solveQuad(a: Double): Option[Double]</pre>
+                    We can test this function by picking an a, solving for x, computing y = a*x*x, then checking whether x*x + y*y = 1. Some example tests are included in the Scala template in this directory.
+                </li>
+            </ul>
+            <ul class="list3" style="padding-left:48px;margin-left:48px">
+                <li>You can run all tests for Part A and Part B with the ~test task in sbt, or just the specific tests for Part B with ~testOnly PartB.</li>
+            </ul>
+            <h4 id="content_1_4"><a id="nd52d659">Write methods gnerating a fibonacci series, f_n = f_(n-1) + f_(n-2) given f_0, f_1 and n, in the following 4 ways; copy the app-template directory as the exercises/C3-fibonacci directory, and then write methods whose names are fib1, fib2, fib3, and fib4.  The object name should be "Fibonacci".</a></h4>
+            <pre> def fib1(f0: Int, f1: Int, n: Int): Int </pre>
+            <ol class="list1" style="padding-left:16px;margin-left:16px">
+                <li>Use "var".</li>
+                <li>Use a recursion; "var" cannot be used.</li>
+                <li>Use a tail recursion.; "var" cannot be used.</li>
+                <li>Use "Stream"; "var" cannot be used.</li>
+            </ol>
+            <h4 id="content_1_5"><a id="y5c33c92">Exercises for collections; copy the app-template directory as the exercises/C3-monads</a></h4>
+            <ol class="list1" style="padding-left:16px;margin-left:16px">
+                <li>
+                    Write a method calculating a weighted average; use "zip"; sum_i a_i * w_i / sum_i w_i
+                    <pre> def weightedAverage(a: Array[Double], w: Array[Double]) = { ... }</pre>
+                </li>
+                <li>
+                    Write a method that concatenating characters to a single string by using
+                    one of the methods, reduce, reduceLeft and reduceRight.
+                    The signature should be the following.
+                    <pre>       def concatenate(c: Vector[Char]): String</pre>
+                </li>
+            </ol>
+            <h3 id="content_1_6"><a href="scala-breeze.html" title="MiyazawaClassWiki:scala-breeze" rel="nofollow">NEXT: Breeze </a></h3>
+        </div>
+        <hr class="full_hr">
+        Check out <a href="https://github.com/Kawaeee/scala_ds">GitHub</a> repository for more information!!
+    </body>
+</html>

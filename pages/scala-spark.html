@@ -1,113 +1,79 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <!-- saved from url=(0050)http://10.4.11.97/~miyazawa/class/wiki/scala-spark -->
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" class="gr__10_4_11_97"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
- 
- <meta http-equiv="content-style-type" content="text/css">
+<!-- cleansed unused code block and adjusted some layout formatting by Kawaeee -->
+<!-- For everyone, who want to get original version of the page, please check first commit! -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" class="gr__10_4_11_97">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="content-style-type" content="text/css">
+        <title>scala-spark - Miyazawa's Lecture Notes</title>
+    </head>
+    <body data-gr-c-s-loaded="true">
+        <hr class="full_hr">
+        <div id="body">
+            <p>
+            <h2 id="content_1_0">Scala language: A functional approach to data science (<a href="index.html" title="scala-course.18 (1d)">scala-course.18</a>)</p></h2>
+            <h3 id="content_1_0"><a id="w9ad78f2">Apache Spark</a></h3>
+            <h4 id="content_1_1"><a id="w9ad78f2">(optional) Review some Spark documentation</a></h4>
+            <ul class="list2" style="padding-left:32px;margin-left:32px">
+                <li>The official
+                    <a href="https://spark.apache.org/docs/latest/" rel="nofollow">Spark Documentation </a>
+                    is pretty good. Read through
+                    the <a href="https://spark.apache.org/docs/latest/quick-start.html" rel="nofollow">Quick start </a> guide,
+                    then quickly skim the <a href="http://spark.apache.org/docs/latest/rdd-programming-guide.html" rel="nofollow">Programming guide </a>,
+                    then the<a href="https://spark.apache.org/docs/latestml-guide.html" rel="nofollow">ML guide </a>,
+                    especially the section on Classification and regression.
+                    Briefly familiarise yourself with
+                    the <a href="https://spark.apache.org/docs/latest/api/scala/" rel="nofollow">API docs </a>.
+                </li>
+            </ul>
+            <h4 id="content_1_2"><a id="i8ad8cc7">Logistic regression for the SpamBase dataset</a></h4>
+            <ul class="list2" style="padding-left:32px;margin-left:32px">
+                <li>Please get <a href="#error" title="MiyazawaClass:scala-course.18/tmp/spark.tar.gz" rel="nofollow">this tar file </a> and expand it in scala-course.18/root-dir-for-the-course/.</li>
+            </ul>
+            <ul class="list2" style="padding-left:32px;margin-left:32px">
+                <li>This exercise will be concerned with analysis of the old SpamBase dataset.</li>
+            </ul>
+            <ul class="list3" style="padding-left:48px;margin-left:48px">
+                <li>
+                    After skimming the documentation:
+                    <pre>ftp://ftp.ics.uci.edu/pub/machine-learning-databases/spambase/ </pre>
+                </li>
+            </ul>
+            <ul class="list3" style="padding-left:48px;margin-left:48px">
+                <li>
+                    Download the dataset:
+                    <pre>ftp://ftp.ics.uci.edu/pub/machine-learning-databases/spambase/spambase.data</pre>
+                    to your machine and move it somewhere sensible for subsequent analysis;
+                    use exercises/C8-Spark-exercise.
+                    It actually isn't very big, so don't worry about size/memory issues.
+                </li>
+            </ul>
+            <ul class="list3" style="padding-left:48px;margin-left:48px">
+                <li>The data is a simple CSV file, so can be parsed easily with Spark's built-in CSV parser. Complete a Spark application program (src/main/scala/LogRegBySpark/LogRegBySpark.scala) to read the data</li>
+            </ul>
+            <ul class="list3" style="padding-left:48px;margin-left:48px">
+                <li>and fit a simple logistic regression model for the final column (Spam or not) given the other variables.
+                    Use Lasso regression (L1 regression) to shrink out some of the variables. Choose your Lasso regularisation parameter by cross-validation.
+                    Also, use standardization = false.  How many of the 57 predictor variables drop out of the regression in this case?
+                </li>
+            </ul>
+            <h3 id="content_1_3"><a id="c4825758">TensorFlow Scala</a></h3>
+            <ul class="list2" style="padding-left:32px;margin-left:32px">
+                <li>
+                    <a href="https://github.com/eaplatanios/tensorflow_scala" rel="nofollow">TensorFlow Scala </a> is a scala API for <a href="https://www.tensorflow.org/" rel="nofollow">TensorFlow </a>.
+                    An example for object detection is found
+                    <a href="https://brunk.io/deep-learning-in-scala-part-3-object-detection.html" rel="nofollow">here </a>
+                    with <a href="https://github.com/sbrunk/scala-deeplearn-examples/blob/master/tensorflow/src/main/scala/io/brunk/examples/ObjectDetector.scala" rel="nofollow">source code </a>
+                    <ul class="list3" style="padding-left:16px;margin-left:16px">
+                        <li>Try to run this example by using sbt in scala-course.18/root-dir-for-the-course/C10-tensorflow-scala.</li>
+                    </ul>
+                </li>
+            </ul>
+            <h3 id="content_1_4"><a href="index.html" title="scala-course.18 (1d)" rel="nofollow">BACK: Main Page</a></h3>
 
- <title>scala-spark - Miyazawa's Lecture Notes</title>
-
- <link rel="SHORTCUT ICON" href="http://10.4.11.97/~miyazawa/class/wiki/scala-spark">
- <link rel="stylesheet" type="text/css" media="screen" href="./8_files/pukiwiki.css.php" charset="iso-8859-1">
- <link rel="stylesheet" type="text/css" media="print" href="./8_files/pukiwiki.css(1).php" charset="iso-8859-1">
- <link rel="alternate" type="application/rss+xml" title="RSS" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=rss">
-
-</head>
-<body data-gr-c-s-loaded="true">
-
-<div id="header">
- <!--
- <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?FrontPage"><img id="logo" src="image/pukiwiki.png" width="80" height="80" alt="[PukiWiki]" title="[PukiWiki]" /></a>
-
- <h1 class="title"><a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?plugin=related&amp;page=scala-spark">scala-spark</a> </h1>
- -->
-
-    <span class="small">
-   <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?FrontPage" title="FrontPage (138d)">Top</a> / scala-spark   </span>
- 
-</div>
-
-<div id="navigator">
-
- <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?plugin=related&amp;page=scala-spark">scala-spark</a>  &nbsp;
- [ <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?FrontPage">Front page</a> ] &nbsp;
-
- [
-  <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=diff&amp;page=scala-spark">Diff</a> 	| <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=backup&amp;page=scala-spark">Backup</a>   | <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-spark">Reload</a> ] &nbsp;
-
- [
-    <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=list">List of pages</a>  | <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=search">Search</a> | <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?RecentChanges">Recent changes</a> | <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?Help">Help</a> ]
-
-</div>
-
-<hr class="full_hr">
-<div id="body"><p><a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-course.18" title="scala-course.18 (1d)">scala-course.18</a></p>
-<div class="contents">
-<a id="contents_1"></a>
-<ul class="list2" style="padding-left:16px;margin-left:16px"><li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-spark#w9ad78f2">  Apache Spark </a>
-<ul class="list3" style="padding-left:16px;margin-left:16px"><li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-spark#zb29d352">  (optional) Review some Spark documentation </a></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-spark#i8ad8cc7">  Logistic regression for the SpamBase dataset </a></li></ul></li>
-<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-spark#c4825758">  TensorFlow Scala </a></li></ul>
-</div>
-
-<h3 id="content_1_0">Apache Spark  <a class="anchor_super" id="w9ad78f2" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-spark#w9ad78f2" title="w9ad78f2">†</a></h3>
-
-<div class="jumpmenu"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-spark#navigator">↑</a></div><h4 id="content_1_1">(optional) Review some Spark documentation  <a class="anchor_super" id="zb29d352" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-spark#zb29d352" title="zb29d352">†</a></h4>
-<ul class="list2" style="padding-left:32px;margin-left:32px"><li>The official
-<a href="https://spark.apache.org/docs/latest/" rel="nofollow">Spark Documentation </a>
-is pretty good. Read through
-the <a href="https://spark.apache.org/docs/latest/quick-start.html" rel="nofollow">Quick start </a> guide,
-then quickly skim the <a href="http://spark.apache.org/docs/latest/rdd-programming-guide.html" rel="nofollow">Programming guide </a>,
-then the<a href="https://spark.apache.org/docs/latestml-guide.html" rel="nofollow">ML guide </a>,
-especially the section on Classification and regression.
-Briefly familiarise yourself with
-the <a href="https://spark.apache.org/docs/latest/api/scala/" rel="nofollow">API docs </a>.</li></ul>
-
-<div class="jumpmenu"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-spark#navigator">↑</a></div><h4 id="content_1_2">Logistic regression for the SpamBase dataset  <a class="anchor_super" id="i8ad8cc7" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-spark#i8ad8cc7" title="i8ad8cc7">†</a></h4>
-<ul class="list2" style="padding-left:32px;margin-left:32px"><li>Please get <a href="http://10.4.11.97/~miyazawa/class/scala-course.18/tmp/spark.tar.gz" title="MiyazawaClass:scala-course.18/tmp/spark.tar.gz" rel="nofollow">this tar file </a> and expand it in scala-course.18/root-dir-for-the-course/.</li></ul>
-<ul class="list2" style="padding-left:32px;margin-left:32px"><li>This exercise will be concerned with analysis of the old SpamBase dataset.</li></ul>
-<ul class="list3" style="padding-left:48px;margin-left:48px"><li>After skimming the documentation:
-<pre>ftp://ftp.ics.uci.edu/pub/machine-learning-databases/spambase/ </pre></li></ul>
-<ul class="list3" style="padding-left:48px;margin-left:48px"><li>Download the dataset:
-<pre>ftp://ftp.ics.uci.edu/pub/machine-learning-databases/spambase/spambase.data</pre>
-to your machine and move it somewhere sensible for subsequent analysis;
-use exercises/C8-Spark-exercise.
-It actually isn't very big, so don't worry about size/memory issues.</li></ul>
-<ul class="list3" style="padding-left:48px;margin-left:48px"><li>The data is a simple CSV file, so can be parsed easily with Spark's built-in CSV parser. Complete a Spark application program (src/main/scala/LogRegBySpark/LogRegBySpark.scala) to read the data</li></ul>
-<ul class="list3" style="padding-left:48px;margin-left:48px"><li>and fit a simple logistic regression model for the final column (Spam or not) given the other variables.
-Use Lasso regression (L1 regression) to shrink out some of the variables. Choose your Lasso regularisation parameter by cross-validation.
-Also, use standardization = false.  How many of the 57 predictor variables drop out of the regression in this case?</li></ul>
-
-<div class="jumpmenu"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-spark#navigator">↑</a></div><h3 id="content_1_3">TensorFlow Scala  <a class="anchor_super" id="c4825758" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-spark#c4825758" title="c4825758">†</a></h3>
-<ul class="list2" style="padding-left:32px;margin-left:32px"><li><a href="https://github.com/eaplatanios/tensorflow_scala" rel="nofollow">TensorFlow Scala </a> is a scala API for <a href="https://www.tensorflow.org/" rel="nofollow">TensorFlow </a>.
-An example for object detection is found
-<a href="https://brunk.io/deep-learning-in-scala-part-3-object-detection.html" rel="nofollow">here </a>
-with <a href="https://github.com/sbrunk/scala-deeplearn-examples/blob/master/tensorflow/src/main/scala/io/brunk/examples/ObjectDetector.scala" rel="nofollow">source code </a>
-<ul class="list3" style="padding-left:16px;margin-left:16px"><li>Try to run this example by using sbt in scala-course.18/root-dir-for-the-course/C10-tensorflow-scala.</li></ul></li></ul>
-</div>
-
-
-
-<hr class="full_hr">
-<!-- Toolbar -->
-<div id="toolbar">
-
- <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?FrontPage"><img src="./8_files/top.png" width="20" height="20" alt="Front page" title="Front page"></a>
- &nbsp;
-  <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=diff&amp;page=scala-spark"><img src="./8_files/diff.png" width="20" height="20" alt="Diff" title="Diff"></a>	<a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=backup&amp;page=scala-spark"><img src="./8_files/backup.png" width="20" height="20" alt="Backup" title="Backup"></a> <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-spark"><img src="./8_files/reload.png" width="20" height="20" alt="Reload" title="Reload"></a> &nbsp;
- <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=list"><img src="./8_files/list.png" width="20" height="20" alt="List of pages" title="List of pages"></a> <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=search"><img src="./8_files/search.png" width="20" height="20" alt="Search" title="Search"></a> <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?RecentChanges"><img src="./8_files/recentchanges.png" width="20" height="20" alt="Recent changes" title="Recent changes"></a> &nbsp; <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?Help"><img src="./8_files/help.png" width="20" height="20" alt="Help" title="Help"></a> &nbsp; <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=rss&amp;ver=1.0"><img src="./8_files/rss.png" width="36" height="14" alt="RSS of recent changes" title="RSS of recent changes"></a></div>
-
-<div id="lastmodified"> <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?plugin=related&amp;page=scala-spark">scala-spark</a> ; &nbsp; Last-modified: 2018-11-30 (Fri) 15:44:24  (1d)</div>
-
-<div id="related">Link: <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-course.18">scala-course.18</a>(1d)</div>
-
-<div id="footer">
- Site admin: <a href="mailto:miyazawa@sanzo.org">MIYAZAWA, Sanzo</a>
-<p>
-
- <strong>PukiWiki 1.4.7</strong> Copyright © 2001-2006 <a href="http://pukiwiki.sourceforge.jp/">PukiWiki Developers Team</a>. License is <a href="http://www.gnu.org/licenses/gpl.html">GPL</a>.<br> Based on "PukiWiki" 1.3 by <a href="http://factage.com/yu-ji/">yu-ji</a>.
- Powered by PHP 5.6.24-0+deb8u1. HTML conversion time: 0.006 sec.
-</p></div>
-
-
-
-</body></html>
+        </div>
+        <hr class="full_hr">
+        Check out <a href="https://github.com/Kawaeee/scala_ds">GitHub</a> repository for more information!!
+    </body>
+</html>
