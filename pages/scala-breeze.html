@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!-- saved from url=(0051)http://10.4.11.97/~miyazawa/class/wiki/scala-breeze -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" class="gr__10_4_11_97"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ 
+ <meta http-equiv="content-style-type" content="text/css">
+
+ <title>scala-breeze - Miyazawa's Lecture Notes</title>
+
+ <link rel="SHORTCUT ICON" href="http://10.4.11.97/~miyazawa/class/wiki/scala-breeze">
+ <link rel="stylesheet" type="text/css" media="screen" href="./4_files/pukiwiki.css.php" charset="iso-8859-1">
+ <link rel="stylesheet" type="text/css" media="print" href="./4_files/pukiwiki.css(1).php" charset="iso-8859-1">
+ <link rel="alternate" type="application/rss+xml" title="RSS" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=rss">
+
+</head>
+<body data-gr-c-s-loaded="true">
+
+<div id="header">
+ <!--
+ <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?FrontPage"><img id="logo" src="image/pukiwiki.png" width="80" height="80" alt="[PukiWiki]" title="[PukiWiki]" /></a>
+
+ <h1 class="title"><a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?plugin=related&amp;page=scala-breeze">scala-breeze</a> </h1>
+ -->
+
+    <span class="small">
+   <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?FrontPage" title="FrontPage (138d)">Top</a> / scala-breeze   </span>
+ 
+</div>
+
+<div id="navigator">
+
+ <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?plugin=related&amp;page=scala-breeze">scala-breeze</a>  &nbsp;
+ [ <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?FrontPage">Front page</a> ] &nbsp;
+
+ [
+  <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=diff&amp;page=scala-breeze">Diff</a> 	| <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=backup&amp;page=scala-breeze">Backup</a>   | <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-breeze">Reload</a> ] &nbsp;
+
+ [
+    <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=list">List of pages</a>  | <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=search">Search</a> | <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?RecentChanges">Recent changes</a> | <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?Help">Help</a> ]
+
+</div>
+
+<hr class="full_hr">
+<div id="body"><p><a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-course.18" title="scala-course.18 (1d)">scala-course.18</a></p>
+<div class="contents">
+<a id="contents_1"></a>
+<ul class="list2" style="padding-left:16px;margin-left:16px"><li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-breeze#ddf8673f">  Scala scientific and statistical computing </a>
+<ul class="list3" style="padding-left:16px;margin-left:16px"><li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-breeze#k2849014">  Spire cfor macro </a></li>
+<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-breeze#m50173a6">  Breeze: Useful links: </a></li>
+<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-breeze#re67a30b">  Breeze: Review the on-line documentation </a></li>
+<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-breeze#lb9220c9">  Breeze: utilities </a></li>
+<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-breeze#e3adea2e">  Breeze: Multivariate normal </a></li></ul></li>
+<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-breeze#e5ca67de">  Monte Carlo methods  </a></li></ul>
+</div>
+
+<div class="spacer">&nbsp;</div>
+<h3 id="content_1_0">Scala scientific and statistical computing  <a class="anchor_super" id="ddf8673f" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-breeze#ddf8673f" title="ddf8673f">†</a></h3>
+
+<div class="jumpmenu"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-breeze#navigator">↑</a></div><h4 id="content_1_1">Spire cfor macro  <a class="anchor_super" id="k2849014" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-breeze#k2849014" title="k2849014">†</a></h4>
+<ul class="list2" style="padding-left:32px;margin-left:32px"><li>Copy app-template as exercises/C4-cfor , and the compete the following task in this directory.</li>
+<li>Write a program which compares execution time among zip().map, for, foreach, cfor, and
+Breeze vector dot product (v dot v);
+where v is the Breeze DenseVector of 1000000.  Use the time function
+listed in section 5.1.3.</li></ul>
+
+<div class="jumpmenu"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-breeze#navigator">↑</a></div><h4 id="content_1_2">Breeze: Useful links:  <a class="anchor_super" id="m50173a6" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-breeze#m50173a6" title="m50173a6">†</a></h4>
+<ul class="list2" style="padding-left:32px;margin-left:32px"><li><a href="https://github.com/scalanlp/breeze/" rel="nofollow">Breeze </a></li>
+<li><a href="https://github.com/scalanlp/breeze/wiki" rel="nofollow">Breeze wiki </a></li>
+<li><a href="http://www.scalanlp.org/api/breeze/#package" rel="nofollow"> Breeze API (scala doc) </a></li></ul>
+
+<div class="jumpmenu"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-breeze#navigator">↑</a></div><h4 id="content_1_3">Breeze: Review the on-line documentation  <a class="anchor_super" id="re67a30b" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-breeze#re67a30b" title="re67a30b">†</a></h4>
+<ul class="list2" style="padding-left:32px;margin-left:32px"><li>Begin by reading through
+<a href="https://github.com/scalanlp/breeze/wiki/Quickstart" rel="nofollow">the quickstart guide </a>
+and then read through
+<a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?%5B%5Bhttps%3A%2F%2Fgithub.com%2Fscalanlp%2Fbreeze%2Fwiki%2FLinear-Algebra-Cheat-Sheet%20%5D%5D" title="https://github.com/scalanlp/breeze/wiki/Linear-Algebra-Cheat-Sheet " rel="nofollow">the linear algebra cheat sheet </a>.
+Then quickly check a few other pages on the Breeze wiki. Finally, have a quick look at the API docs - for example, search the docs for Gamma and see how Breeze parameterises the gamma distribution. Note that the docs are often very terse, so sometimes there's no alternative than to browse
+<a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?%5B%5Bhttps%3A%2F%2Fgithub.com%2Fscalanlp%2Fbreeze%2Ftree%2Fmaster%2Fmath%2Fsrc%2Fmain%2Fscala%2Fbreeze%20%20%5D%5D" title="https://github.com/scalanlp/breeze/tree/master/math/src/main/scala/breeze  " rel="nofollow">the source code </a>.
+Also, <a href="https://github.com/scalanlp/breeze/tree/master/math/src/test/scala/breeze" rel="nofollow">the test code </a>
+can sometimes be useful for figuring out how to use a Breeze function.</li></ul>
+
+<div class="jumpmenu"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-breeze#navigator">↑</a></div><h4 id="content_1_4">Breeze: utilities  <a class="anchor_super" id="lb9220c9" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-breeze#lb9220c9" title="lb9220c9">†</a></h4>
+<ul class="list2" style="padding-left:32px;margin-left:32px"><li>Copy app-template to exercises/C4-Breeze-utils and then make the following programs in exercises/C4-Breeze-utils,
+<ul class="list3" style="padding-left:16px;margin-left:16px"><li>to convert an Array[Double] to DenseVector[Double]
+<pre> import breeze.linalg._
+ def arrayToDenseVector(a: Array[Double]): DenseVector[Double] = { ...}</pre></li>
+<li>to convert a DenseVector[Double] to Array[Double],
+<pre> import breeze.linalg._
+ def denseVectorToArray(v: DenseVector[Double]): Array[Double] = { ... }</pre></li>
+<li>to convert an Array[Array[Double]] to DenseMatrix[Double],
+<pre> def arrayToDenseMatrix(aa: Array[Array[Double]]) : DenseMatrix[Double] = { ... }</pre></li>
+<li>to convert a DenseMatrix[Double] to Array[Array[Double]].
+<pre> def denseMatrixToArray(m: DenseMatrix[Double]): Array[Array[Double]] = { ... }</pre></li>
+<li>to calculate m(i, j) - m(i, _) - m(_, j) + m(_, _), where m(i, _) = sum_j m(i, j) / m.cols,  and m(_, j) = sum_i m(i, j) / m.rows.
+<pre> def exerciseMatrix(dm: DenseMatrix[Double]): DenseMatrix[Double] = { ... }</pre></li></ul></li></ul>
+
+<div class="jumpmenu"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-breeze#navigator">↑</a></div><h4 id="content_1_5">Breeze: Multivariate normal  <a class="anchor_super" id="e3adea2e" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-breeze#e3adea2e" title="e3adea2e">†</a></h4>
+<ul class="list2" style="padding-left:32px;margin-left:32px"><li>Copy the directory app-template as exercises/C4-rmvn
+and then in that directory for sbt</li></ul>
+<ul class="list2" style="padding-left:32px;margin-left:32px"><li>Write a function with type signature
+<pre>rmvn(n: Int, mean: DenseVector[Double], cov: DenseMatrix[Double]): DenseMatrix[Double]</pre>
+which returns a matrix with n rows, each row representing an iid draw from a multivariate normal with the given mean and variance matrix.
+Note that this can be accomplished by post-multiplying a matrix of iid N(0,1) random quantities by the upper Cholesky factor of the variance matrix (on the right), and then adding the mean to each row of the result (don't use the built-in Breeze function for simulating multivariate Gaussians unless you're stuck). Study my PCA example for ideas.</li></ul>
+
+<div class="jumpmenu"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-breeze#navigator">↑</a></div><h3 id="content_1_6"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-mc" title="MiyazawaClassWiki:scala-mc" rel="nofollow">Monte Carlo methods </a>  <a class="anchor_super" id="e5ca67de" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-breeze#e5ca67de" title="e5ca67de">†</a></h3>
+</div>
+
+
+
+<hr class="full_hr">
+<!-- Toolbar -->
+<div id="toolbar">
+
+ <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?FrontPage"><img src="./4_files/top.png" width="20" height="20" alt="Front page" title="Front page"></a>
+ &nbsp;
+  <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=diff&amp;page=scala-breeze"><img src="./4_files/diff.png" width="20" height="20" alt="Diff" title="Diff"></a>	<a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=backup&amp;page=scala-breeze"><img src="./4_files/backup.png" width="20" height="20" alt="Backup" title="Backup"></a> <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-breeze"><img src="./4_files/reload.png" width="20" height="20" alt="Reload" title="Reload"></a> &nbsp;
+ <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=list"><img src="./4_files/list.png" width="20" height="20" alt="List of pages" title="List of pages"></a> <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=search"><img src="./4_files/search.png" width="20" height="20" alt="Search" title="Search"></a> <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?RecentChanges"><img src="./4_files/recentchanges.png" width="20" height="20" alt="Recent changes" title="Recent changes"></a> &nbsp; <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?Help"><img src="./4_files/help.png" width="20" height="20" alt="Help" title="Help"></a> &nbsp; <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=rss&amp;ver=1.0"><img src="./4_files/rss.png" width="36" height="14" alt="RSS of recent changes" title="RSS of recent changes"></a></div>
+
+<div id="lastmodified"> <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?plugin=related&amp;page=scala-breeze">scala-breeze</a> ; &nbsp; Last-modified: 2018-09-17 (Mon) 13:03:32  (75d)</div>
+
+<div id="related">Link: <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-course.18">scala-course.18</a>(1d)</div>
+
+<div id="footer">
+ Site admin: <a href="mailto:miyazawa@sanzo.org">MIYAZAWA, Sanzo</a>
+<p>
+
+ <strong>PukiWiki 1.4.7</strong> Copyright © 2001-2006 <a href="http://pukiwiki.sourceforge.jp/">PukiWiki Developers Team</a>. License is <a href="http://www.gnu.org/licenses/gpl.html">GPL</a>.<br> Based on "PukiWiki" 1.3 by <a href="http://factage.com/yu-ji/">yu-ji</a>.
+ Powered by PHP 5.6.24-0+deb8u1. HTML conversion time: 0.006 sec.
+</p></div>
+
+
+
+</body></html>

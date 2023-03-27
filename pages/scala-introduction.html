@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!-- saved from url=(0057)http://10.4.11.97/~miyazawa/class/wiki/scala-introduction -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" class="gr__10_4_11_97"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ 
+ <meta http-equiv="content-style-type" content="text/css">
+
+ <title>scala-introduction - Miyazawa's Lecture Notes</title>
+
+ <link rel="SHORTCUT ICON" href="http://10.4.11.97/~miyazawa/class/wiki/scala-introduction">
+ <link rel="stylesheet" type="text/css" media="screen" href="./1_files/pukiwiki.css.php" charset="iso-8859-1">
+ <link rel="stylesheet" type="text/css" media="print" href="./1_files/pukiwiki.css(1).php" charset="iso-8859-1">
+ <link rel="alternate" type="application/rss+xml" title="RSS" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=rss">
+
+</head>
+<body data-gr-c-s-loaded="true">
+
+<div id="header">
+ <!--
+ <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?FrontPage"><img id="logo" src="image/pukiwiki.png" width="80" height="80" alt="[PukiWiki]" title="[PukiWiki]" /></a>
+
+ <h1 class="title"><a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?plugin=related&amp;page=scala-introduction">scala-introduction</a> </h1>
+ -->
+
+    <span class="small">
+   <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?FrontPage" title="FrontPage (138d)">Top</a> / scala-introduction   </span>
+ 
+</div>
+
+<div id="navigator">
+
+ <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?plugin=related&amp;page=scala-introduction">scala-introduction</a>  &nbsp;
+ [ <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?FrontPage">Front page</a> ] &nbsp;
+
+ [
+  <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=diff&amp;page=scala-introduction">Diff</a> 	| <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=backup&amp;page=scala-introduction">Backup</a>   | <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-introduction">Reload</a> ] &nbsp;
+
+ [
+    <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=list">List of pages</a>  | <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=search">Search</a> | <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?RecentChanges">Recent changes</a> | <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?Help">Help</a> ]
+
+</div>
+
+<hr class="full_hr">
+<div id="body"><p><a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-course.18" title="scala-course.18 (1d)">scala-course.18</a></p>
+<div class="contents">
+<a id="contents_1"></a>
+<ul class="list2" style="padding-left:16px;margin-left:16px"><li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-introduction#w4db6ae5">  Introduction </a>
+<ul class="list3" style="padding-left:16px;margin-left:16px"><li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-introduction#jb1c0d6e">  SBT and editor setup </a></li>
+<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-introduction#j2e112fa">  Create your own Scala SBT project. </a></li>
+<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-introduction#ef763e75">  Scala basics tour </a></li></ul></li>
+<li><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-introduction#n34662d2">  Scala and FP Basics  </a></li></ul>
+</div>
+
+<h3 id="content_1_0">Introduction  <a class="anchor_super" id="w4db6ae5" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-introduction#w4db6ae5" title="w4db6ae5">†</a></h3>
+
+<div class="jumpmenu"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-introduction#navigator">↑</a></div><h4 id="content_1_1">SBT and editor setup  <a class="anchor_super" id="jb1c0d6e" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-introduction#jb1c0d6e" title="jb1c0d6e">†</a></h4>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>Install sbt following either
+<ul class="list2" style="padding-left:16px;margin-left:16px"><li><a href="https://www.scala-sbt.org/1.x/docs/Installing-sbt-on-Windows.html" rel="nofollow">installing sbt on windows</a></li>
+<li>or
+<a href="https://www.scala-sbt.org/1.x/docs/Installing-sbt-on-Linux.html" rel="nofollow">installing sbt on linux</a> including a <a href="https://www.maketecheasier.com/install-linux-subsystem-for-windows10/" rel="nofollow">linux subsystem on Windows 10 </a></li></ul></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>Get <a href="http://10.4.11.97/~miyazawa/class/scala-course.18/root-dir-for-the-course.zip" title="MiyazawaClass:scala-course.18/root-dir-for-the-course.zip" rel="nofollow">a zip file </a>
+<ul class="list2" style="padding-left:16px;margin-left:16px"><li>Unzip it and change directory to root-dir-for-the-course  .</li>
+<li>Make sure that typing sbt run from the sbt-test directory correctly runs the test script.
+<pre> cd sbt-test
+ sbt run</pre></li></ul></li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>Explore some of the directories in this directory. In particular, find the code fragments automatically extracted from each chapter, and the complete runnable examples.  Examine the complete runnable HelloWorld example from Chapter 1.</li></ul>
+<p>(Note that no build.sbt file or fancy directory structure is required for a simple single-file project with no dependencies.)</p>
+
+<div class="jumpmenu"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-introduction#navigator">↑</a></div><h4 id="content_1_2">Create your own Scala SBT project.  <a class="anchor_super" id="j2e112fa" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-introduction#j2e112fa" title="j2e112fa">†</a></h4>
+<ul class="list2" style="padding-left:32px;margin-left:32px"><li>Change directory to scala-course-2018/root-dir-for-the-course</li>
+<li>Try not to run SBT from the app-template directory in order to keep it clean.</li>
+<li>Copy that directory (and its contents) as exercises/C1-HelloWorld and create your own SBT project.</li>
+<li>Just copy the source code file (examples/C1-HelloWorld/HelloWorld.scala) for the HelloWorld example into the correct source code sub-directory (src/scala/C1-HelloWorld/HelloWorld.scala) and check that it works by first running sbt and then run from the SBT prompt.</li>
+<li>Open up the source code in your editor/IDE and edit the message that is printed, save, then run again from SBT.</li>
+<li>Then type ~run in SBT, go back to your editor and change the message again. As you save the buffer, note that SBT detects that the source file has changed and automatically re-compiles and re-runs the project.</li></ul>
+<ul class="list1" style="padding-left:16px;margin-left:16px"><li>Use the REPL
+<ul class="list2" style="padding-left:16px;margin-left:16px"><li>From the SBT prompt, type console to get a REPL. Enter 1+2 to check it works.</li>
+<li>To exit REPL, type 'ctrl-D'.</li></ul></li></ul>
+
+<div class="jumpmenu"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-introduction#navigator">↑</a></div><h4 id="content_1_3">Scala basics tour  <a class="anchor_super" id="ef763e75" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-introduction#ef763e75" title="ef763e75">†</a></h4>
+<ul class="list2" style="padding-left:32px;margin-left:32px"><li>Then read through
+Part II in the lecture note ( or
+<a href="https://docs.scala-lang.org/tour/basics.html" rel="nofollow">the basic tour </a>
+from <a href="https://docs.scala-lang.org/" rel="nofollow">the official Scala documentation </a> ).
+Copy-and-paste commands from the browser into the REPL.</li>
+<li>Try to understand as much as possible as you go along. If you get it finished, browse some of the other official Scala documentation. You will want to bookmark this material to return to later.</li>
+<li><strong>Complete this task for a month</strong>.</li></ul>
+
+<div class="jumpmenu"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-introduction#navigator">↑</a></div><h3 id="content_1_4"><a href="http://10.4.11.97/~miyazawa/class/wiki/scala-FP-basics" title="MiyazawaClassWiki:scala-FP-basics" rel="nofollow">Scala and FP Basics </a>  <a class="anchor_super" id="n34662d2" href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-introduction#n34662d2" title="n34662d2">†</a></h3>
+</div>
+
+
+
+<hr class="full_hr">
+<!-- Toolbar -->
+<div id="toolbar">
+
+ <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?FrontPage"><img src="./1_files/top.png" width="20" height="20" alt="Front page" title="Front page"></a>
+ &nbsp;
+  <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=diff&amp;page=scala-introduction"><img src="./1_files/diff.png" width="20" height="20" alt="Diff" title="Diff"></a>	<a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=backup&amp;page=scala-introduction"><img src="./1_files/backup.png" width="20" height="20" alt="Backup" title="Backup"></a> <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-introduction"><img src="./1_files/reload.png" width="20" height="20" alt="Reload" title="Reload"></a> &nbsp;
+ <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=list"><img src="./1_files/list.png" width="20" height="20" alt="List of pages" title="List of pages"></a> <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=search"><img src="./1_files/search.png" width="20" height="20" alt="Search" title="Search"></a> <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?RecentChanges"><img src="./1_files/recentchanges.png" width="20" height="20" alt="Recent changes" title="Recent changes"></a> &nbsp; <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?Help"><img src="./1_files/help.png" width="20" height="20" alt="Help" title="Help"></a> &nbsp; <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?cmd=rss&amp;ver=1.0"><img src="./1_files/rss.png" width="36" height="14" alt="RSS of recent changes" title="RSS of recent changes"></a></div>
+
+<div id="lastmodified"> <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?plugin=related&amp;page=scala-introduction">scala-introduction</a> ; &nbsp; Last-modified: 2018-08-29 (Wed) 10:29:07  (94d)</div>
+
+<div id="related">Link: <a href="http://10.4.11.97/~miyazawa/class/wiki/index.php?scala-course.18">scala-course.18</a>(1d)</div>
+
+<div id="footer">
+ Site admin: <a href="mailto:miyazawa@sanzo.org">MIYAZAWA, Sanzo</a>
+<p>
+
+ <strong>PukiWiki 1.4.7</strong> Copyright © 2001-2006 <a href="http://pukiwiki.sourceforge.jp/">PukiWiki Developers Team</a>. License is <a href="http://www.gnu.org/licenses/gpl.html">GPL</a>.<br> Based on "PukiWiki" 1.3 by <a href="http://factage.com/yu-ji/">yu-ji</a>.
+ Powered by PHP 5.6.24-0+deb8u1. HTML conversion time: 0.005 sec.
+</p></div>
+
+
+
+</body></html>
