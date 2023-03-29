@@ -12,10 +12,10 @@ object meanSD{
   }
 
   def main(args: Array[String]) : Unit = {
-    val uniform_v = Vector.fill(10000)(Uniform(0, 1).sample)
-    val uniform_pv = ParVector.fill(10000)(Uniform(0, 1).sample)
-    printf(s"meanAndSD with Vector: %s \n", meanAndSD(uniform_v))
-    printf(s"meanAndSD with ParVector: %s \n", meanAndSD(uniform_pv))
+    val uniformV = Vector.fill(10000)(Uniform(0, 1).sample)
+    val uniformPV = ParVector.fill(10000)(Uniform(0, 1).sample)
+    printf(s"meanAndSD with Vector: %s \n", meanAndSD(uniformV))
+    printf(s"meanAndSD with ParVector: %s \n", meanAndSD(uniformPV))
   }
 
 }
