@@ -108,15 +108,9 @@ object Regression {
     // first fit without an intercept
     Lm(y,x,List("Frequency","Angle of attack","Chord length","Free-stream velocity","Suction side displacement thickness")).summary
     // add an intercept and re-fit
-    val X = DenseMatrix.horzcat(
-      DenseVector.ones[Double](x.rows).toDenseMatrix.t,x)
+    val X = DenseMatrix.horzcat(DenseVector.ones[Double](x.rows).toDenseMatrix.t,x)
     val mod = Lm(y,X,List("(Intercept)","Frequency","Angle of attack","Chord length","Free-stream velocity","Suction side displacement thickness"))
     mod.summary
 
   } // main
-
-
 }
-
-// eof
-

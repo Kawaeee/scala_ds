@@ -115,15 +115,9 @@ object Regression {
     // first fit without an intercept
     Lm(y,x,List("LongPos","PrisCoef","LDR","BDR","LBR","Froude")).summary
     // add an intercept and re-fit
-    val X = DenseMatrix.horzcat(
-      DenseVector.ones[Double](x.rows).toDenseMatrix.t,x)
+    val X = DenseMatrix.horzcat(DenseVector.ones[Double](x.rows).toDenseMatrix.t,x)
     val mod = Lm(y,X,List("(Intercept)","LongPos","PrisCoef","LDR","BDR","LBR","Froude"))
     mod.summary
 
   } // main
-
-
 }
-
-// eof
-
