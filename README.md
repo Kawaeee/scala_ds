@@ -3,6 +3,10 @@
 - The course seems to have some inspiration from [darrenjw/scala-course](https://github.com/darrenjw/scala-course).
 - Some of the exercises might not be the same as actual course work because I did some script tuning to make it work properly.
 
+## Prerequisites
+- [Java 8](https://developers.redhat.com/products/openjdk/download)
+- [sbt (scala build tool)](https://www.scala-sbt.org/download.html)
+
 ## Project Structure
 ```bash
 ├── exercises/                          # Courseworks and example
