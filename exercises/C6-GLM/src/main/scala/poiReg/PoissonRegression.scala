@@ -44,8 +44,7 @@ object PoissonRegression extends App {
   //p: breeze.plot.Plot = breeze.plot.Plot@54a23ced
   p += plot(x,y,'+')
   //res0: breeze.plot.Plot = breeze.plot.Plot@54a23ced
-  p += plot(x,x map (xi => math.exp( betahat(0)+betahat(1)*xi)),
-  '.',colorcode="red")
+  p += plot(x,x map (xi => math.exp( betahat(0)+betahat(1)*xi)),'.',colorcode="red")
   //res1: breeze.plot.Plot = breeze.plot.Plot@54a23ced
   p.xlabel = "x"
   //p.xlabel: String = x

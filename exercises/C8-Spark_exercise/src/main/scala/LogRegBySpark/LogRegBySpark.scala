@@ -40,7 +40,6 @@ object LogRegBySpark {
                option("inferSchema", inferSchema).
                csv(fileName)
 
-    println(df)
     (spark, sc, df)
   }
 
@@ -89,7 +88,7 @@ object LogRegBySpark {
 
     val logrfit = logReg.fit(dflogr)
 
-    val lambda  = cvMod.bestModel.extractParamMap.getOrElse(cvMod.bestModel.getParam("regParam"),0.0).asInstanceOf[Double]
+    val lambda = cvMod.bestModel.extractParamMap.getOrElse(cvMod.bestModel.getParam("regParam"),0.0).asInstanceOf[Double]
    
     (cvMod,lambda,logReg,logrfit)
   }
@@ -109,10 +108,10 @@ object LogRegBySpark {
     val logReg = logisticRegression(standardization = false, elasticNetParam = 1.0, regParam = 8.058254732499574E-6, maxIter = 100)
     val (cvMod, lambda, bestLogReg, bestLogRegFit) = searchBestHyperParam(logReg, trainDF, nFold = 3)
 
-    //println( cvMod.explainParams )
+    //println(cvMod.explainParams)
     println(cvMod.extractParamMap)
 
-    //println( cvMod.bestModel.explainParams )
+    //println(cvMod.bestModel.explainParams)
     println(cvMod.bestModel.extractParamMap)
     println(s"Best lambda = $lambda")
 
@@ -168,7 +167,8 @@ object LogRegBySpark {
 
     val logRegSummary = bestLogRegFit.evaluate(testDF)
     println(s"Accuracy: ${logRegSummary.accuracy}")
- */
+  */
     spark.stop()
   }
+
 }

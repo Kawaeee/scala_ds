@@ -6,10 +6,10 @@ object Fibonacci{
     var b = f1
     var sum = 0
     while(i<n){
-     sum = a+b
-     a = b
-     b = sum
-     i += 1
+      sum = a+b
+      a = b
+      b = sum
+      i += 1
     }
     sum
   }
@@ -31,7 +31,6 @@ object Fibonacci{
     def fib(f0 : Int,f1 : Int): Stream[Int] = f0 #:: fib(f1,f0+f1)
     fib(f0,f1).take(n+1).toList.last
   }
-
 
   def main(args: Array[String]) : Unit = {
     val f0 = if (args.length == 3) args(0).toInt else 5

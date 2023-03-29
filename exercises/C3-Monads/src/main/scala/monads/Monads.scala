@@ -12,4 +12,5 @@ object Monads{
     printf("concatenate(List('h','e','l','l','o')): %s \n", concatenate(List('h','e','l','l','o')))
     printf("concatenate(List('s','c','a','l','a','_','d','s')): %s \n", concatenate(List('s','c','a','l','a','_','d','s')))
   }
+
 }

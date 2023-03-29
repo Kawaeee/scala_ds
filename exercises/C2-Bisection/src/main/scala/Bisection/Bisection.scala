@@ -1,7 +1,6 @@
 object Bisection{
 
   def findRoot(low : Double, high : Double)(f: Double => Double): Double = {
-    
     val eps = 1.0e-8
 
     if((high - low) < eps){

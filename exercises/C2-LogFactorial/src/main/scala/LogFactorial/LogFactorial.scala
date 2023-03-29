@@ -28,4 +28,5 @@ object LogFactorial{
     printf(s"logfact($n): %f \n", logfact(n))
     printf(s"logfact_2($n): %f \n", logfact_2(n))
   }
+
 }

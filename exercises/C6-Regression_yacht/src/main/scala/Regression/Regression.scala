@@ -19,8 +19,7 @@ object Regression {
   def backSolve(A: DenseMatrix[Double],
     y: DenseVector[Double]): DenseVector[Double] = {
     val yc = y.copy
-    blas.dtrsv("U", "N", "N", A.cols, A.toArray,
-      A.rows, yc.data, 1)
+    blas.dtrsv("U", "N", "N", A.cols, A.toArray, A.rows, yc.data, 1)
     yc
   }
 
@@ -80,15 +79,9 @@ object Regression {
         coefficients(i), se(i), t(i), p(i),
         if (p(i) < 0.05) "*" else " ",
         names(i)))
-      printf(
-        "\nResidual standard error: %8.4f on %d degrees of freedom\n",
-        rse, df)
-      printf(
-        "Multiple R-squared: %6.4f, Adjusted R-squared: %6.4f\n",
-        rSquared, adjRs)
-      printf(
-        "F-statistic: %6.4f on %d and %d DF, p-value: %6.5f\n\n",
-        f, k, df, pf)
+      printf("\nResidual standard error: %8.4f on %d degrees of freedom\n",rse, df)
+      printf("Multiple R-squared: %6.4f, Adjusted R-squared: %6.4f\n",rSquared, adjRs)
+      printf("F-statistic: %6.4f on %d and %d DF, p-value: %6.5f\n\n",f, k, df, pf)
     }
   }
 
@@ -120,4 +113,5 @@ object Regression {
     mod.summary
 
   } // main
+
 }

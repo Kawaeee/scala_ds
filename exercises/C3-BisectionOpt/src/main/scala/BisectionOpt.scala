@@ -19,7 +19,7 @@ object BisectionOpt{
       } else if(fMid == 0.0){
         Some(mid)
       } else {
-        //require(fLow * fHigh < 0.0)
+        // require(fLow * fHigh < 0.0)
         None
       }
     }

@@ -11,12 +11,10 @@ object LogisticRegression extends App {
   // beta: DenseVector[Double] = DenseVector(0.1, 0.3)
   val ones = DenseVector.ones[Double](N)
   // ones: DenseVector[Double] = DenseVector(1.0, ...
-  val x = DenseVector(Gaussian(1.0,3.0).sample(N).
-    toArray)
+  val x = DenseVector(Gaussian(1.0,3.0).sample(N).toArray)
   // x: DenseVector[Double] = DenseVector(6.272108997,
   //  3.0135444386214765, 4.373649007468049, ...
-  val X = DenseMatrix.vertcat(ones.toDenseMatrix,
-    x.toDenseMatrix).t
+  val X = DenseMatrix.vertcat(ones.toDenseMatrix,x.toDenseMatrix).t
   // X: breeze.linalg.DenseMatrix[Double] =
   // 1.0  6.27210899796815
   // 1.0  3.0135444386214765
@@ -32,8 +30,7 @@ object LogisticRegression extends App {
   val pr = theta map expit
   // pr: breeze.linalg.DenseVector[Double] = DenseVector(
   //  0.8788551012256975, 0.7318567276541773, ...
-  val y = pr map (pi => new Binomial(1,pi).draw) map (
-    _.toDouble)
+  val y = pr map (pi => new Binomial(1,pi).draw) map (_.toDouble)
   // y: DenseVector[Double]=DenseVector(1.0,1.0,1.0,...
 
   val betahat = logReg(y,X)
@@ -52,9 +49,7 @@ object LogisticRegression extends App {
   // p: breeze.plot.Plot = breeze.plot.Plot@62b33d65
   p += plot(x,y,'+')
   // res0: breeze.plot.Plot = breeze.plot.Plot@62b33d65
-  p += plot(x,x map (xi =>
-    expit(betahat(0)+betahat(1)*xi)),
-    '.',colorcode="red")
+  p += plot(x,x map (xi => expit(betahat(0)+betahat(1)*xi)),'.',colorcode="red")
   // res1: breeze.plot.Plot = breeze.plot.Plot@62b33d65
   p.xlabel = "x"
   // p.xlabel: String = x
