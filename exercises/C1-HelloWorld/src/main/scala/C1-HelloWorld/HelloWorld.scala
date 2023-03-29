@@ -1,8 +1,8 @@
+// single line comment
 /*
   multi-line
   comment
 */
-
 object MyApp {
 
   def main(args: Array[String]) : Unit = {
@@ -11,4 +11,4 @@ object MyApp {
     println("Scala")
   }
 
-} // single line comment
+}
