@@ -20,8 +20,12 @@ object LogFactorial{
   }
 
   def main(args: Array[String]) : Unit = {
+    val n = if (args.length == 1) args(0).toInt else 20
     printf("factorial(5): %f \n", factorial(5))
     printf("logfact(10): %f \n", logfact(10))
-    printf("logfact_2(10): %f \n", logfact_2(10))
+    printf("logfact_2(15): %f \n", logfact_2(15))
+    printf(s"factorial($n): %f \n", factorial(n))
+    printf(s"logfact($n): %f \n", logfact(n))
+    printf(s"logfact_2($n): %f \n", logfact_2(n))
   }
 }

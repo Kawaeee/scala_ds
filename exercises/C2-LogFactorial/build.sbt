@@ -18,5 +18,5 @@ libraryDependencies  ++= Seq(
 // libraryDependencies += "com.github.darrenjw" %% "scala-glm" % "0.3"
 // libraryDependencies  += "org.ddahl" %% "rscala" % "2.5.3"
 
-scalaVersion := "2.12.6"
+scalaVersion := "2.12.16"
 
