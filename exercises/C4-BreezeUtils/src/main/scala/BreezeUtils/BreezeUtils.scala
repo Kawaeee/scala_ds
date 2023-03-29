@@ -12,13 +12,13 @@ object BreezeUtils{
     def denseMatrixToArray(m: DenseMatrix[Double]): Array[Array[Double]] = (m(*,::).map(i => i.toArray)).toArray
 
     def exerciseMatrix(dm: DenseMatrix[Double]): DenseMatrix[Double] = {
-        val mj = sum(dm(*,::)) /:/ dm.cols.toDouble
-        val mi = sum(dm(::,*)) /:/ dm.rows.toDouble
-        val mm = sum(dm)
-        dm(*,::) :-= mi.t
-        dm(::,*) :-= mj
-        dm :+= mm
-        dm
+      val mj = sum(dm(*,::)) /:/ dm.cols.toDouble
+      val mi = sum(dm(::,*)) /:/ dm.rows.toDouble
+      val mm = sum(dm)
+      dm(*,::) :-= mi.t
+      dm(::,*) :-= mj
+      dm :+= mm
+      dm
     }
 
     def main(args: Array[String]): Unit = {
