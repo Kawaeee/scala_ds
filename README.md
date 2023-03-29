@@ -1,12 +1,15 @@
 # scala_ds
-- This project is for course archivization of CSC493 - Special Topic III : Scala Language for Data Scientists.
+- This project is for the course archivization of CSC493 - Special Topic III : Scala Language for Data Scientists.
+- The course seems to have some inspiration from [darrenjw/scala-course](https://github.com/darrenjw/scala-course).
+- Some of the exercises might not be the same as actual course work because I did some script tuning to make it work properly.
 
 ## Project Structure
 ```bash
 ├── exercises/                          # Courseworks and example
 │       └── C1-HelloWorld/
 │       └── C2-bisection/
-├── docs/                              # HTML Archived content
+│       └── README.md
+├── docs/                               # HTML Archived content
 │       └── index.html
 │       └── scala-tools.html
 ├── scala_tutorial.pdf                  # Course lecture pdf file
