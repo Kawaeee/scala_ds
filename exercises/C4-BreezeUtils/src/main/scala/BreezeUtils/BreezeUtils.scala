@@ -9,7 +9,7 @@ object BreezeUtils{
 
     def arrayToDenseMatrix(aa: Array[Array[Double]]): DenseMatrix[Double] = DenseMatrix(aa:_*)
 
-    def denseMatrixToArray(m: DenseMatrix[Double]): Array[Array[Double]] = (m(*,::).map(i => i.toArray)).toArray
+    def denseMatrixToArray(m: DenseMatrix[Double]): Array[Array[Double]] = Array(m.t.toArray)
 
     def exerciseMatrix(dm: DenseMatrix[Double]): DenseMatrix[Double] = {
       val mj = sum(dm(*,::)) /:/ dm.cols.toDouble
