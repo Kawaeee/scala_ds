@@ -17,24 +17,24 @@
             <h4 id="content_1_1"><a id="x2af6179">Review documentations</a></h4>
             <ul class="list2" style="padding-left:32px;margin-left:32px">
                 <li>(optional) Briefly review
-                    <a href="https://docs.scala-lang.org/overviews/collections/introduction.html" rel="nofollow">the official collections overview </a>,
+                    <a href="https://docs.scala-lang.org/overviews/collections/introduction.html" rel="nofollow">the official collections overview</a>,
                     concentrating in particular on immutable collection classes, and also
                     <a href="https://docs.scala-lang.org/overviews/parallel-collections/overview.html" rel="nofollow">the parallel collections overview</a>.
                     Try some code examples in a REPL.
                 </li>
                 <li>You may also find
-                    <a href="https://superruzafa.github.io/visual-scala-reference/index.html" rel="nofollow">the visual scala collections </a>
+                    <a href="https://superruzafa.github.io/visual-scala-reference/index.html" rel="nofollow">the visual scala collections</a>
                     reference helpful.
                 </li>
             </ul>
             <h4 id="content_1_2"><a id="fd75a711">Computing the sample mean and standard deviation</a></h4>
             <ol class="list2" style="padding-left:32px;margin-left:32px">
                 <li>
-                    By copying the app-template directory as the exercises/C3-meanAndSD directory (or otherwise),
+                    By copying the app-template directory as the <code>exercises/C3-meanAndSD</code> directory (or otherwise),
                     create a new Scala SBT project. Write a function with signature
                     <pre>meanAndSD(x: Vector[Double]): (Double, Double)</pre>
                     which returns a tuple containing the sample mean and
-                    <a href="https://en.wikipedia.org/wiki/Standard_deviation" rel="nofollow">sample standard deviation </a> of the collection of numbers.
+                    <a href="https://en.wikipedia.org/wiki/Standard_deviation" rel="nofollow">sample standard deviation</a> of the collection of numbers.
                 </li>
                 <li>When you get it working, write some tests to check it works on a few trivial examples.</li>
                 <li>Generalise it so that it works for any collection of Doubles, and check that it works for parallel as well as serial collections.</li>
@@ -55,7 +55,7 @@
             <h4 id="content_1_3"><a id="k7328ceb">Wrap interval bisection code in an Option</a></h4>
             <ul class="list2" style="padding-left:32px;margin-left:32px">
                 <li>Starting from the code you wrote for interval bisection previously, make it safe by wrapping it in an Option;
-                    copy exercises/C2-bisection as exercises/C3-bisection.
+                    copy <code>exercises/C2-bisection</code> as <code>exercises/C3-bisection</code>.
                 </li>
             </ul>
             <ul class="list2" style="padding-left:32px;margin-left:32px">
@@ -113,7 +113,7 @@ x*x + y*y -1 = 0</pre>
             <ul class="list3" style="padding-left:48px;margin-left:48px">
                 <li>You can run all tests for Part A and Part B with the ~test task in sbt, or just the specific tests for Part B with ~testOnly PartB.</li>
             </ul>
-            <h4 id="content_1_4"><a id="nd52d659">Write methods gnerating a fibonacci series, f_n = f_(n-1) + f_(n-2) given f_0, f_1 and n, in the following 4 ways; copy the app-template directory as the exercises/C3-fibonacci directory, and then write methods whose names are fib1, fib2, fib3, and fib4.  The object name should be "Fibonacci".</a></h4>
+            <h4 id="content_1_4"><a id="nd52d659">Write methods gnerating a fibonacci series, f_n = f_(n-1) + f_(n-2) given f_0, f_1 and n, in the following 4 ways; copy the app-template directory as the <code>exercises/C3-fibonacci</code> directory, and then write methods whose names are fib1, fib2, fib3, and fib4.  The object name should be "Fibonacci".</a></h4>
             <pre> def fib1(f0: Int, f1: Int, n: Int): Int </pre>
             <ol class="list1" style="padding-left:16px;margin-left:16px">
                 <li>Use "var".</li>
@@ -121,7 +121,7 @@ x*x + y*y -1 = 0</pre>
                 <li>Use a tail recursion.; "var" cannot be used.</li>
                 <li>Use "Stream"; "var" cannot be used.</li>
             </ol>
-            <h4 id="content_1_5"><a id="y5c33c92">Exercises for collections; copy the app-template directory as the exercises/C3-monads</a></h4>
+            <h4 id="content_1_5"><a id="y5c33c92">Exercises for collections; copy the app-template directory as the <code>exercises/C3-monads</code></a></h4>
             <ol class="list1" style="padding-left:16px;margin-left:16px">
                 <li>
                     Write a method calculating a weighted average; use "zip"; sum_i a_i * w_i / sum_i w_i
@@ -134,7 +134,7 @@ x*x + y*y -1 = 0</pre>
                     <pre>       def concatenate(c: Vector[Char]): String</pre>
                 </li>
             </ol>
-            <h3 id="content_1_6"><a href="scala-breeze.html" title="MiyazawaClassWiki:scala-breeze" rel="nofollow">NEXT: Breeze </a></h3>
+            <h3 id="content_1_6"><a href="scala-breeze.html" title="MiyazawaClassWiki:scala-breeze" rel="nofollow">NEXT: Breeze</a></h3>
         </div>
         <hr class="full_hr">
         Check out <a href="https://github.com/Kawaeee/scala_ds">GitHub</a> repository for more information!!

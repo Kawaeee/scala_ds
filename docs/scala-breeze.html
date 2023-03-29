@@ -16,40 +16,36 @@
             <h3 id="content_1_0"><a id="ddf8673f">Scala scientific and statistical computing</a></h3>
             <h4 id="content_1_1"><a id="k2849014">Spire cfor macro</a></h4>
             <ul class="list2" style="padding-left:32px;margin-left:32px">
-                <li>Copy app-template as exercises/C4-cfor , and the compete the following task in this directory.</li>
-                <li>Write a program which compares execution time among zip().map, for, foreach, cfor, and
-                    Breeze vector dot product (v dot v);
-                    where v is the Breeze DenseVector of 1000000.  Use the time function
-                    listed in section 5.1.3.
-                </li>
+                <li>Copy app-template as <code>exercises/C4-cfor</code>, and the compete the following task in this directory.</li>
+                <li>Write a program which compares execution time among zip().map, for, foreach, cfor, and Breeze vector dot product (v dot v); where v is the Breeze DenseVector of 1000000.  Use the time function listed in section 5.1.3.</li>
             </ul>
             <h4 id="content_1_2"><a id="m50173a6">Breeze: Useful links:</a></h4>
             <ul class="list2" style="padding-left:32px;margin-left:32px">
-                <li><a href="https://github.com/scalanlp/breeze/" rel="nofollow">Breeze </a></li>
-                <li><a href="https://github.com/scalanlp/breeze/wiki" rel="nofollow">Breeze wiki </a></li>
-                <li><a href="http://www.scalanlp.org/api/breeze/#package" rel="nofollow"> Breeze API (scala doc) </a></li>
+                <li><a href="https://github.com/scalanlp/breeze/" rel="nofollow">Breeze</a></li>
+                <li><a href="https://github.com/scalanlp/breeze/wiki" rel="nofollow">Breeze wiki</a></li>
+                <li><a href="http://www.scalanlp.org/api/breeze/#package" rel="nofollow">Breeze API (scala doc)</a></li>
             </ul>
             <h4 id="content_1_3"><a id="re67a30b">Breeze: Review the on-line documentation</a></h4>
             <ul class="list2" style="padding-left:32px;margin-left:32px">
                 <li>Begin by reading through
-                    <a href="https://github.com/scalanlp/breeze/wiki/Quickstart" rel="nofollow">the quickstart guide </a>
+                    <a href="https://github.com/scalanlp/breeze/wiki/Quickstart" rel="nofollow">the quickstart guide</a>
                     and then read through
-                    <a href="https://github.com/scalanlp/breeze/wiki/Linear-Algebra-Cheat-Sheet" rel="nofollow">the linear algebra cheat sheet </a>.
+                    <a href="https://github.com/scalanlp/breeze/wiki/Linear-Algebra-Cheat-Sheet" rel="nofollow">the linear algebra cheat sheet</a>.
                     Then quickly check a few other pages on the Breeze wiki. Finally, have a quick look at the API docs - for example, search the docs for Gamma and see how Breeze parameterises the gamma distribution. Note that the docs are often very terse, so sometimes there's no alternative than to browse
-                    <a href="https://github.com/scalanlp/breeze/tree/master/math/src/main/scala/breeze" rel="nofollow">the source code </a>.
-                    Also, <a href="https://github.com/scalanlp/breeze/tree/master/math/src/test/scala/breeze" rel="nofollow">the test code </a>
+                    <a href="https://github.com/scalanlp/breeze/tree/master/math/src/main/scala/breeze" rel="nofollow">the source code</a>.
+                    Also, <a href="https://github.com/scalanlp/breeze/tree/master/math/src/test/scala/breeze" rel="nofollow">the test code</a>
                     can sometimes be useful for figuring out how to use a Breeze function.
                 </li>
             </ul>
             <h4 id="content_1_4"><a id="lb9220c9">Breeze: utilities</a></h4>
             <ul class="list2" style="padding-left:32px;margin-left:32px">
                 <li>
-                    Copy app-template to exercises/C4-Breeze-utils and then make the following programs in exercises/C4-Breeze-utils,
+                    Copy app-template to <code>exercises/C4-Breeze-utils</code> and then make the following programs in exercises/C4-Breeze-utils,
                     <ul class="list3" style="padding-left:16px;margin-left:16px">
                         <li>
                             to convert an Array[Double] to DenseVector[Double]
                             <pre> import breeze.linalg._
- def arrayToDenseVector(a: Array[Double]): DenseVector[Double] = { ...}</pre>
+ def arrayToDenseVector(a: Array[Double]): DenseVector[Double] = { ... }</pre>
                         </li>
                         <li>
                             to convert a DenseVector[Double] to Array[Double],
@@ -73,7 +69,7 @@
             </ul>
             <h4 id="content_1_5"><a id="e3adea2e">Breeze: Multivariate normal</a></h4>
             <ul class="list2" style="padding-left:32px;margin-left:32px">
-                <li>Copy the directory app-template as exercises/C4-rmvn
+                <li>Copy the directory app-template as <code>exercises/C4-rmvn</code>
                     and then in that directory for sbt
                 </li>
             </ul>
@@ -85,7 +81,7 @@
                     Note that this can be accomplished by post-multiplying a matrix of iid N(0,1) random quantities by the upper Cholesky factor of the variance matrix (on the right), and then adding the mean to each row of the result (don't use the built-in Breeze function for simulating multivariate Gaussians unless you're stuck). Study my PCA example for ideas.
                 </li>
             </ul>
-            <h3 id="content_1_6"><a href="scala-mc.html" title="MiyazawaClassWiki:scala-mc" rel="nofollow">NEXT: Monte Carlo methods </a></h3>
+            <h3 id="content_1_6"><a href="scala-mc.html" title="MiyazawaClassWiki:scala-mc" rel="nofollow">NEXT: Monte Carlo methods</a></h3>
         </div>
         <hr class="full_hr">
         Check out <a href="https://github.com/Kawaeee/scala_ds">GitHub</a> repository for more information!!
