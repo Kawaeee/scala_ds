@@ -14,7 +14,7 @@ cd C1-HelloWorld/
 sbt
 ```
 
-* After sbt console is fully initialized, type run to execute the code.
+* After sbt console is fully initialized, type run/test to execute the code.
 ```bash
 [info] sbt server started at local:///Users/kaw/.sbt/1.0/server/59cb06da148b0261eae3/sock
 [info] started sbt server
